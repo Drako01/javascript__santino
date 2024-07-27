@@ -1,5 +1,18 @@
 # Bienvenida al Curso de JavaScript
 
+<p align="center"> 
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="Javascript" width="100" height="100"/></a> 
+ <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="100" height="100"/></a> <a href="https://www.w3schools.com/css/" target="_blank"> 
+ <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="100" height="100"/></a> 
+</p>
+
+
+
+---
+
+
+
 ¡Hola Santino! Bienvenido al curso de JavaScript. En este documento encontrarás información valiosa sobre las buenas prácticas en JavaScript y cómo iniciar la estructura de una aplicación web.
 
 ## Buenas Prácticas en JavaScript
