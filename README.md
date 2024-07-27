@@ -46,6 +46,7 @@ Una estructura organizada y modular es clave para mantener un proyecto escalable
 ### Estructura de Carpetas
 
 ```plaintext
+
 ├── index.html
 ├── contact.html
 ├── products.html
@@ -62,12 +63,14 @@ Una estructura organizada y modular es clave para mantener un proyecto escalable
 │   │   │   └── modals.css
 │   │   ├── layout/
 │   │   │   ├── header.css
+│   │   │   ├── main.css
 │   │   │   └── footer.css
 │   ├── js/
-│   │   └── index.js
+│   │   └── scripts.js
 │   ├── img/
 │   └── fonts/
 ├── README.md
+
 ```
 
 ### Ventajas
