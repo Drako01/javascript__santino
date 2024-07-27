@@ -1,0 +1,21 @@
+/* Configuracion de estilos del footer */
+.footer {
+    width: 100%;
+    height: 4rem;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Uso de variables */
+    font-family: var(--thirth-font);
+    background-color: var(--secondary-color);    
+}
+
+.footer p {
+    font-weight: bolder;
+    font-size: var(--second-size);
+    color: var(--primary-color);
+}

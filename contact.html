@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio | Bienvenido</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <!-- Header se encarga de la Navegacion -->
+        <nav class="navigation">
+            <ul class="navigation__ul">
+                <li class="navigation__ul__li">
+                    <a href="index.html" class="navigation__ul__li__a">Index</a>
+                </li>
+                <li class="navigation__ul__li">
+                    <a href="products.html" class="navigation__ul__li__a">Productos</a>
+                </li>
+                <li class="navigation__ul__li">
+                    <a href="contact.html" class="navigation__ul__li__a">Contacto</a>
+                </li>
+                <button class="darkModeSwitch" id="switch">                   
+                    <span></span>
+                    <span></span>
+                </button>
+            </ul>           
+        </nav>
+    </header>
+    <main>
+        <!-- Aloja todo el contenido -->
+        <section class="container">
+            <h1>Contacto</h1>
+            <div class="contenedor__form">
+                <form class="formulario">
+                    <div class="formulario-grupo">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" minlength="3" maxlength="30" 
+                        name="nombre" id="nombre" placeholder="Ingrese su Nombre" required>
+                    </div>
+                    <div class="formulario-grupo">
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" minlength="3" maxlength="30" 
+                        name="apellido" id="apellido" placeholder="Ingrese su Apellido" required>
+                    </div>
+                    <div class="formulario-grupo">
+                        <label for="dni">DNI:</label>
+                        <input type="number" min="1000000"  placeholder="Ejemplo 99999999"
+                        max="99999999" name="dni" id="dni" required>
+                    </div>
+                    <div class="formulario-grupo">
+                        <label for="email">Email:</label>
+                        <input type="email" minlength="3" maxlength="100" 
+                        name="email" id="email"  placeholder="Ejemplo juanperez@mimail.com" required>
+                    </div>                    
+                    
+                    <div class="formulario-grupo">
+                        <label for="satisfaccion">Nivel de Satisfacción <span id="progress_p"> 0%</span></label>
+                        <div class="range-container">
+                            <input type="range" name="satisfaccion" id="satisfaccion" min="0" max="100" value="0">
+                            <div class="progress-bar"></div>
+                        </div>                        
+                    </div>
+                    
+                    <div class="formulario-grupo">
+                        <label for="pais">Pais de Origen:</label>
+                        <select name="pais" id="pais">
+                            <option disabled selected>Seleccione una Opcion</option>
+                            <option value="arg">Argentina</option>
+                            <option value="br">Brasil</option>
+                            <option value="ur">Uruguay</option>
+                            <option value="cl">Chile</option>
+                            <option value="pr">Paraguay</option>
+                        </select>
+                    </div>
+                    <div class="formulario-grupo">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea name="mensaje" rows="4" id="mensaje" required>
+    
+                        </textarea>
+                    </div>
+                    <div class="formulario-grupo_button">
+                    <button class="button__primary">Enviar</button></div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <!-- Tambien hace de navegacion / Informacion -->
+        <p> &#xa9; Copyright 2024 | Desarrollado por Santino &#xae;</p>    </footer>
+        <script src="assets/js/index.js"></script>
+</body>
+
+</html>

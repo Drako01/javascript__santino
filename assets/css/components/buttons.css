@@ -1,0 +1,74 @@
+.button__primary,
+.button__secondary {
+    width: 10rem;
+    height: 3rem;
+    font-size: calc(var(--second-size) * 0.8);
+    letter-spacing: 2px;
+    border: none;
+    border-radius: .25rem;
+    margin: 1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: var(--first-size) var(--first-size) var(--first-size) var(--fourth-color);
+}
+
+.button__primary {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.button__secondary {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.button__primary:hover,
+.button__secondary:hover {
+    box-shadow: none;
+}
+
+.darkModeSwitch {
+    background: var(--thirt-color);
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 1.2rem;
+    align-items: center;
+    justify-content: space-between;
+    width: 50px;
+}
+
+.darkModeSwitch span {
+    width: 1.4rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    display: block;
+    color: var(--white-color);
+    background: none;
+}
+
+.darkModeSwitch::after {
+    display: block;
+    background: var(--primary-color);
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: unset;
+    border-radius: 1.2rem;
+    transition: all .5s ease;
+    box-shadow: 0 0 2px 2px var(--fourth-color);
+    content: "";
+}
+
+.darkModeSwitch.active {
+    background: #d0d0d0;
+}
+
+.darkModeSwitch.active::after {
+    left: unset;
+    right: 0;
+}

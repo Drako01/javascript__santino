@@ -1,0 +1,30 @@
+/* Configurar el formato del header */
+.header {
+    width: 100%;
+    height: 3.5rem;
+    position: sticky;
+    top: 0;   
+
+    /* Uso de variables */
+    font-family: var(--thirth-font);
+    background-color: var(--secondary-color);
+}
+.navigation{
+    height: 100%;
+    width: 100%;
+    padding-top: 1rem;
+}
+.navigation__ul {    
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.navigation__ul__li__a {
+    color: var(--primary-color);
+    font-size: var(--thirt-size);
+}
+
+.navigation__ul__li__a:hover{
+    color: var(--thirt-color);
+}

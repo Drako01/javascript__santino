@@ -1,0 +1,163 @@
+/* Estilos del contenedor del formulario */
+.contenedor__form {
+    display: flex;
+    justify-content: center;
+    width: 800px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.formulario-grupo_button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.formulario-grupo_button button {
+    width: 100%;
+}
+
+.contenedor__form .formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50%;
+    border: 1px solid var(--secondary-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 8px var(--shadows);
+}
+
+.contenedor__form .formulario .formulario-grupo {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor__form .formulario .formulario-grupo label {
+    margin-bottom: .5rem;
+    color: var(--secondary-color);
+    font-family: "Roboto";
+}
+
+.contenedor__form .formulario .formulario-grupo select,
+.contenedor__form .formulario .formulario-grupo input,
+.contenedor__form .formulario .formulario-grupo textarea {
+    border: none;
+    background: var(--shadows);
+    padding: .5rem;
+    border-radius: .25rem;
+}
+
+/* Estilos del control de entrada de tipo range */
+.range-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px; 
+    background: var(--secondary-color); 
+    outline: none; 
+    opacity: 0.7; 
+    transition: opacity 0.2s;
+    border-radius: 5px; 
+    padding: 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    height: 8px;
+    cursor: pointer;
+    background: white; 
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    height: 8px;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: white;
+    border-color: transparent; 
+    color: transparent; 
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px; 
+    height: 15px;
+    background: var(--secondary-color);
+    cursor: pointer;
+    border-radius: 50%; 
+    margin-top: -3.5px;
+    box-shadow: 0 0 2px var(--shadows); 
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 15px; 
+    height: 15px; 
+    background: var(--secondary-color); 
+    cursor: pointer; 
+    border-radius: 50%; 
+    box-shadow: 0 0 2px var(--shadows); 
+}
+
+input[type="range"]::-ms-thumb {
+    width: 15px; 
+    height: 15px;
+    background: var(--secondary-color);
+    cursor: pointer; 
+    border-radius: 50%; 
+    box-shadow: 0 0 2px var(--shadows);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+}
+
+input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-fill-lower {
+    background: var(--secondary-color);
+    border-radius: 5px;
+}
+
+input[type="range"]::-ms-fill-upper {
+    background: white;
+    border-radius: 5px;
+}
+
+.progress-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 8px;
+    background: var(--secondary-color);
+    border-radius: 5px;
+    transform: translateY(-50%);
+    z-index: 0;
+    margin: 0 .5rem;
+}

@@ -1,0 +1,39 @@
+/* Creacion de Variables */
+:root {
+    /* Colores */
+    --primary-color: #cfcfcf;
+    --secondary-color: #12505f;
+    --thirt-color: #f3f3f3;
+    --fourth-color: #4a4a4a99;
+    --shadows: #27272713;
+    --black-color: #000;
+    --white-color: #fff;
+    
+    /* Fuentes */
+    --primary-font: "Santino Regular";
+    --secondary-font: "Skylar";
+    --thirth-font: "Roboto";
+
+    /* Medidas */
+    --small: 320px;
+    --medium: 480px;
+    --large: 640px;    
+    --extra-large: 1080px;
+
+    /* Tamaños de Fuentes */
+    --first-size: .5rem;
+    --second-size: 1rem;
+    --thirt-size: 1.2rem;
+}
+
+body.dark {
+    --primary-color: #303030;
+    --secondary-color: #eda0a0;
+    --thirt-color: #0c0c0c;
+    --fourth-color: #b5b5b566;
+    --shadows: #D8D8D8;
+    --black-color: #fff;
+    --white-color: #000;
+
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
