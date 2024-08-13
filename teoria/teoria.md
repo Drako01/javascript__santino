@@ -1,102 +1,149 @@
-# Teoría Básica de JavaScript
+### Teoría sobre Bucles en JavaScript
 
-#### Variables y Constantes
+#### 1. Bucles `for`
+El bucle `for` es una estructura que permite ejecutar un bloque de código varias veces. Se compone de tres partes principales:
+- **Inicialización:** Se establece una variable de control, normalmente un contador.
+- **Condición:** Mientras la condición sea verdadera, el bucle seguirá ejecutándose.
+- **Incremento/Decremento:** Después de cada iteración, la variable de control se incrementa o decrementa.
 
-1. **Variables**:
-   - En JavaScript, una variable es un contenedor para almacenar datos.
-   - Para declarar una variable usamos `let` o `var`.
-   - Ejemplo: `let nombre = "Alejandro";`
+**Sintaxis:**
+```javascript
+for (inicialización; condición; incremento/decremento) {
+    // Código a ejecutar
+}
+```
 
-2. **Constantes**:
-   - Una constante es similar a una variable, pero su valor no puede cambiar una vez asignado.
-   - Se declara usando `const`.
-   - Ejemplo: `const PI = 3.14159;`
+**Ejemplo:**
+```javascript
+for (let i = 1; i <= 10; i++) {
+    console.log(i); // Imprime los números del 1 al 10
+}
+```
 
-#### Entrada y Salida
+#### 2. Bucles `while`
+El bucle `while` ejecuta un bloque de código mientras una condición especificada sea verdadera. A diferencia de `for`, `while` evalúa la condición antes de ejecutar el código.
 
-3. **Prompt**:
-   - `prompt` es una función que muestra un cuadro de diálogo que solicita al usuario que ingrese algún dato.
-   - Ejemplo: `let edad = prompt("Ingrese su edad");`
+**Sintaxis:**
+```javascript
+while (condición) {
+    // Código a ejecutar
+}
+```
 
-4. **Alert**:
-   - `alert` muestra un cuadro de diálogo con un mensaje y un botón de "Aceptar".
-   - Ejemplo: `alert("Hola!");`
+**Ejemplo:**
+```javascript
+let i = 1;
+while (i <= 10) {
+    console.log(i); // Imprime los números del 1 al 10
+    i++;
+}
+```
 
-5. **Console.log**:
-   - `console.log` imprime mensajes en la consola del navegador.
-   - Es útil para depurar el código.
-   - Ejemplo: `console.log("La edad ingresada es: " + edad);`
+#### 3. Bucles `do...while`
+El bucle `do...while` es similar al bucle `while`, pero con una diferencia clave: el bloque de código se ejecuta al menos una vez, ya que la condición se evalúa después de cada ejecución.
 
-#### Control de Flujo
+**Sintaxis:**
+```javascript
+do {
+    // Código a ejecutar
+} while (condición);
+```
 
-6. **if**:
-   - La sentencia `if` se utiliza para ejecutar un bloque de código solo si una condición es verdadera.
-   - Ejemplo:
-     ```javascript
-     if (edad >= 18) {
-       console.log("Eres mayor de edad");
-     }
-     ```
+**Ejemplo:**
+```javascript
+let i = 1;
+do {
+    console.log(i); // Imprime los números del 1 al 10
+    i++;
+} while (i <= 10);
+```
 
-7. **if else**:
-   - `if else` permite ejecutar un bloque de código si una condición es verdadera, y otro bloque si es falsa.
-   - Ejemplo:
-     ```javascript
-     if (numero % 2 === 0) {
-       console.log("El número es par");
-     } else {
-       console.log("El número es impar");
-     }
-     ```
+### Sentencias `break` y `continue`
 
-8. **if else if**:
-   - `if else if` permite evaluar múltiples condiciones en secuencia.
-   - Ejemplo:
-     ```javascript
-     if (numero > 100) {
-       console.log("El número es mayor que 100");
-     } else if (numero < 100) {
-       console.log("El número es menor que 100");
-     } else {
-       console.log("El número es igual a 100");
-     }
-     ```
+#### 4. `break`
+La sentencia `break` se utiliza para salir de un bucle antes de que termine normalmente. Cuando `break` se encuentra dentro de un bucle, el control del programa sale inmediatamente del bucle.
 
-#### Operadores Lógicos
+**Ejemplo:**
+```javascript
+for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+        break; // Sale del bucle cuando i es igual a 5
+    }
+    console.log(i);
+}
+```
 
-9. **Operadores Lógicos**:
-   - `&&` (AND): Devuelve `true` si ambas condiciones son verdaderas.
-   - `||` (OR): Devuelve `true` si al menos una de las condiciones es verdadera.
-   - `!` (NOT): Invierte el valor booleano.
-   - Ejemplo:
-     ```javascript
-     if (edad > 18 && edad < 65) {
-       console.log("Estás en edad laboral");
-     }
-     ```
+#### 5. `continue`
+La sentencia `continue` se usa para omitir la iteración actual del bucle y pasar a la siguiente. A diferencia de `break`, `continue` no sale del bucle, sino que salta al siguiente ciclo de la iteración.
 
-#### Manejo de Tipos de Datos
+**Ejemplo:**
+```javascript
+for (let i = 1; i <= 10; i++) {
+    if (i % 2 === 0) {
+        continue; // Omite los números pares
+    }
+    console.log(i); // Imprime solo números impares
+}
+```
 
-10. **Conversión de Tipos**:
-    - A veces es necesario convertir entre diferentes tipos de datos.
-    - Para convertir una cadena a un número, usamos `parseInt` o `parseFloat`.
-    - Ejemplo:
-      ```javascript
-      let edad = prompt("Ingrese su edad");
-      let edadNumero = parseInt(edad);
-      ```
+### Estructura `switch`
 
-#### Comentarios
+La sentencia `switch` permite ejecutar uno de varios bloques de código basado en el valor de una expresión. Es útil cuando se necesitan comparar el mismo valor o expresión con varias opciones.
 
-11. **Comentarios**:
-    - Los comentarios son líneas de texto que no se ejecutan y se usan para describir el código.
-    - Comentarios de una línea usan `//` y comentarios de múltiples líneas usan `/* ... */`.
-    - Ejemplo:
-      ```javascript
-      // Esto es un comentario de una línea
-      /* Esto es un comentario
-         de múltiples líneas */
-      ```
+**Sintaxis:**
+```javascript
+switch (expresión) {
+    case valor1:
+        // Código a ejecutar si la expresión es igual a valor1
+        break;
+    case valor2:
+        // Código a ejecutar si la expresión es igual a valor2
+        break;
+    // Más casos...
+    default:
+        // Código a ejecutar si la expresión no coincide con ningún valor
+}
+```
+
+**Ejemplo:**
+```javascript
+let dia = 3;
+switch (dia) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    case 3:
+        console.log("Miércoles");
+        break;
+    // Más casos...
+    default:
+        console.log("Día no válido");
+}
+```
+
+### Aplicaciones Combinadas
+
+Puedes combinar bucles y sentencias como `break`, `continue`, y `switch` para crear estructuras de control más complejas. Por ejemplo, puedes utilizar un bucle `for` junto con un `switch` para ejecutar diferentes acciones basadas en el valor del contador.
+
+**Ejemplo:**
+```javascript
+for (let i = 1; i <= 10; i++) {
+    switch (i) {
+        case 3:
+            console.log("Número es 3");
+            break;
+        case 5:
+            console.log("Número es 5");
+            break;
+        default:
+            console.log(i);
+    }
+}
+```
+
 
 
 ---
