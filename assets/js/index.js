@@ -91,8 +91,16 @@
 
 // Estructura Switch
 
-let numeroDia = parseInt(prompt("Ingrese el dia de la semana (1-7)"))
-switch (numeroDia){
+let numeroDia;
+
+do {
+    numeroDia = parseInt(prompt("Ingrese el día de la semana (1-7)"));
+    if (numeroDia < 1 || numeroDia > 7 || isNaN(numeroDia)) {
+        console.log("Número inválido. Por favor, ingrese un número del 1 al 7.");
+    }
+} while (numeroDia < 1 || numeroDia > 7 || isNaN(numeroDia));
+
+switch (numeroDia) {
     case 1:
         console.log("Hoy es Lunes");
         break;
@@ -100,7 +108,7 @@ switch (numeroDia){
         console.log("Hoy es Martes");
         break;
     case 3:
-        console.log("Hoy es Miercoles");
+        console.log("Hoy es Miércoles");
         break;
     case 4:
         console.log("Hoy es Jueves");
@@ -109,12 +117,9 @@ switch (numeroDia){
         console.log("Hoy es Viernes");
         break;
     case 6:
-        console.log("Hoy es Sabado");
+        console.log("Hoy es Sábado");
         break;
     case 7:
         console.log("Hoy es Domingo");
-        break;
-    default:
-        console.log("Ingrese el dia de la semana (1-7)");        
         break;
 }
