@@ -71,6 +71,66 @@ El usuario debe poder seleccionar la conversión deseada y realizar varias conve
 
 
 
+### Problema 6: Sistema de Evaluación de Calificaciones
+
+**Descripción:**
+
+Escribe un programa que permita ingresar las calificaciones de un estudiante en diferentes materias. El usuario debe ingresar el nombre de la materia y la calificación correspondiente. Luego, el programa debe evaluar si la calificación es suficiente para aprobar la materia (mínimo 7 puntos) y mostrar el resultado.
+
+El programa debe permitir al usuario ingresar calificaciones de varias materias y mostrar un resumen al final indicando cuántas materias aprobó y cuántas reprobó.
+
+---
+
+### Problema 7: Simulador de Cajero Automático
+
+**Descripción:**
+
+Crea un programa que simule un cajero automático. El usuario debe poder:
+
+- Consultar su saldo.
+- Retirar dinero (con un límite de $1,000 por operación).
+- Depositar dinero.
+
+El programa debe comenzar con un saldo inicial (por ejemplo, $5,000) y actualizar el saldo después de cada operación. El usuario puede realizar varias operaciones hasta que decida salir.
+
+---
+
+### Problema 8: Juego de Adivinanza
+
+**Descripción:**
+
+Desarrolla un programa donde la computadora seleccione un número aleatorio entre 1 y 10. El usuario debe intentar adivinar el número. El programa debe permitir al usuario ingresar su conjetura y luego informarle si su conjetura es demasiado alta, demasiado baja, o correcta.
+
+El usuario tiene un número limitado de intentos (por ejemplo, 3 intentos) y el programa debe indicar al final si ha ganado o perdido.
+
+---
+
+### Problema 9: Calculadora de Edad en Días
+
+**Descripción:**
+
+Escribe un programa que solicite al usuario su edad en años, meses, y días. Luego, el programa debe calcular y mostrar la edad total del usuario en días.
+
+Considera:
+
+- 1 año = 365 días.
+- 1 mes = 30 días (para simplificar).
+
+El programa debe permitir al usuario realizar el cálculo varias veces si lo desea.
+
+---
+
+### Problema 10: Calculadora de Pago de Estacionamiento
+
+**Descripción:**
+
+Crea un programa que calcule el costo del estacionamiento en un garaje. El usuario debe ingresar el número de horas que ha estacionado su vehículo y el programa debe calcular el costo total en función de la siguiente tarifa:
+
+- Las primeras dos horas: $5 cada una.
+- A partir de la tercera hora: $3 por hora adicional.
+
+El programa debe mostrar el costo total y permitir que el usuario calcule el costo para varios vehículos.
+
 
 ---
 
