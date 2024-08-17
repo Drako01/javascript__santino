@@ -69,7 +69,7 @@ Crea un programa que permita al usuario convertir una cantidad de tiempo de una 
 
 El usuario debe poder seleccionar la conversión deseada y realizar varias conversiones si lo desea.
 
-
+---
 
 ### Problema 6: Sistema de Evaluación de Calificaciones
 
