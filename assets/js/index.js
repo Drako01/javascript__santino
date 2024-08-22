@@ -301,57 +301,57 @@
  * El usuario debe poder realizar tantas conversiones como desee hasta que decida salir del programa. 
  */
 
-let continuar;
+// let continuar;
 
-do {
-    let temperatura = parseFloat(prompt("Ingrese la temperatura:"));
-    if (isNaN(temperatura)) {
-        console.log("Che nabo, ingresa una temperatura válida.!!");
-        continue;
-    }
+// do {
+//     let temperatura = parseFloat(prompt("Ingrese la temperatura:"));
+//     if (isNaN(temperatura)) {
+//         console.log("Che nabo, ingresa una temperatura válida.!!");
+//         continue;
+//     }
 
-    let opcion = prompt("Elija la conversión:\n" +
-        "1. Celsius a Fahrenheit\n" +
-        "2. Celsius a Kelvin\n" +
-        "3. Fahrenheit a Celsius\n" +
-        "4. Fahrenheit a Kelvin\n" +
-        "5. Kelvin a Celsius\n" +
-        "6. Kelvin a Fahrenheit\n" +
-        "Seleccione una opción (1, 2, 3, 4, 5, 6):");
+//     let opcion = prompt("Elija la conversión:\n" +
+//         "1. Celsius a Fahrenheit\n" +
+//         "2. Celsius a Kelvin\n" +
+//         "3. Fahrenheit a Celsius\n" +
+//         "4. Fahrenheit a Kelvin\n" +
+//         "5. Kelvin a Celsius\n" +
+//         "6. Kelvin a Fahrenheit\n" +
+//         "Seleccione una opción (1, 2, 3, 4, 5, 6):");
 
-    let resultado;
+//     let resultado;
 
-    switch (opcion) {
-        case '1':
-            resultado = (temperatura * 9/5) + 32;
-            console.log(`${temperatura}°C son ${resultado}°F.`);
-            break;
-        case '2':
-            resultado = temperatura + 273.15;
-            console.log(`${temperatura}°C son ${resultado}K.`);
-            break;
-        case '3':
-            resultado = (temperatura - 32) * 5/9;
-            console.log(`${temperatura}°F son ${resultado}°C.`);
-            break;
-        case '4':
-            resultado = (temperatura - 32) * 5/9 + 273.15;
-            console.log(`${temperatura}°F son ${resultado}K.`);
-            break;
-        case '5':
-            resultado = temperatura - 273.15;
-            console.log(`${temperatura}K son ${resultado}°C.`);
-            break;
-        case '6':
-            resultado = (temperatura - 273.15) * 9/5 + 32;
-            console.log(`${temperatura}K son ${resultado}°F.`);
-            break;
-        default:
-            console.error("Error, opción NO válida.!!");
-    }
+//     switch (opcion) {
+//         case '1':
+//             resultado = (temperatura * 9/5) + 32;
+//             console.log(`${temperatura}°C son ${resultado}°F.`);
+//             break;
+//         case '2':
+//             resultado = temperatura + 273.15;
+//             console.log(`${temperatura}°C son ${resultado}K.`);
+//             break;
+//         case '3':
+//             resultado = (temperatura - 32) * 5/9;
+//             console.log(`${temperatura}°F son ${resultado}°C.`);
+//             break;
+//         case '4':
+//             resultado = (temperatura - 32) * 5/9 + 273.15;
+//             console.log(`${temperatura}°F son ${resultado}K.`);
+//             break;
+//         case '5':
+//             resultado = temperatura - 273.15;
+//             console.log(`${temperatura}K son ${resultado}°C.`);
+//             break;
+//         case '6':
+//             resultado = (temperatura - 273.15) * 9/5 + 32;
+//             console.log(`${temperatura}K son ${resultado}°F.`);
+//             break;
+//         default:
+//             console.error("Error, opción NO válida.!!");
+//     }
 
-    continuar = prompt("¿Quiere realizar otra conversión? (si/no): ").toLowerCase();
+//     continuar = prompt("¿Quiere realizar otra conversión? (si/no): ").toLowerCase();
 
-} while (continuar === 'si');
+// } while (continuar === 'si');
 
-console.log("Gracias por usar el conversor de temperatura.!");
+// console.log("Gracias por usar el conversor de temperatura.!");
