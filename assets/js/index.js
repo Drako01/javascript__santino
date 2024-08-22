@@ -1,357 +1,262 @@
-// Ciclos e Iteraciones
-// Ciclos por Conteo
-// Estructura for
+function saludar() {
+    console.log("Hola");
+    console.log(10 + 5);
+    let numero = 0;
+    for (i = 0; i < 10; i++) {
+        console.log("Valor: ", numero + i);
+    }
+}
 
-// Ciclos Condicionales
-// Estructura while
-// Estructura do While
+// saludar();
 
-// let numero;
-// numero = 0;
-// console.log(numero);
-// numero = numero + 1;
-// console.log(numero);
-// numero = numero + 1;
-// console.log(numero);
-// numero = numero + 1;
-// console.log(numero);
-// numero = numero + 1;
-// console.log(numero);
-// numero = numero + 1;
-// console.log(numero);
-// console.log("Sin en for");
+// let nombreIngresado = prompt("Ingrese un Nombre:");
+// console.log("El nombre ingresado es: " + nombreIngresado);
+// nombreIngresado = prompt("Ingrese un Nombre:");
+// console.log("El nombre ingresado es: " + nombreIngresado);
+// nombreIngresado = prompt("Ingrese un Nombre:");
+// console.log("El nombre ingresado es: " + nombreIngresado);
+// nombreIngresado = prompt("Ingrese un Nombre:");
+// console.log("El nombre ingresado es: " + nombreIngresado);
+// nombreIngresado = prompt("Ingrese un Nombre:");
+// console.log("El nombre ingresado es: " + nombreIngresado);
 
-// i++ es igual a decir i = i + 1
-// for (let i = 1; i <= 40; i++) {
-//     console.log(i);
-// }
-// console.log("Con en for");
-// Estructura del ciclo for
-// for (desde; hasta; autoincrementacion) {
-//     Lo que quieras que se repita.
-// }
-// for (let i = 10; i >= 0; i--) {
-//     console.log(i);
+// function solicitarNombre() {
+//     let nombreIngresado = prompt("Ingrese un Nombre:");
+//     console.log("El nombre ingresado es: " + nombreIngresado);
 // }
 
+// solicitarNombre();
+// solicitarNombre();
+// solicitarNombre();
+// solicitarNombre();
 
 
-// Ciclos por condiciones
-// let repetir = true;
-// while(repetir){
-//     console.log("Hasta el infinito y mas alla....")
+// Funciones con Parametros
+// function mostrarNombre(nombre){
+//     console.log(nombre);
+// }
+// // mostrarNombre("Santino");
+
+// function suma(nuemro1, numero2) {
+//     console.log(nuemro1 + numero2);
+// }
+// suma(2, 5);
+// suma(6, 9);
+// suma("Alejandro", " Di Stefano");
+
+// let nombreIngresado = prompt("Ingrese un Nombre:");
+
+// function solicitarNombre(pirulo) {
+//     console.log("El nombre ingresado es: " + pirulo);
 // }
 
+// solicitarNombre(nombreIngresado); // Santino
+// solicitarNombre("Alejandro");
+// let resultado = 0;
 
-// let ingreseNumero = parseInt(prompt("Ingrese un numero"));
-// let valorIngresado = isNaN(ingreseNumero); // o true o false
-// if (valorIngresado) {
-//     console.log("Usted ha ingresado un String");
-//     while (valorIngresado) {
-//         ingreseNumero = parseInt(prompt("Ingrese un numero"));
-//         valorIngresado = isNaN(ingreseNumero);
-//     }
-// }
-// console.log("Tabla de Multiplicar del " + ingreseNumero);
-// for (let i = 1; i <= 10; i++) {
-//     let resultado = ingreseNumero * i;
-//     console.log(ingreseNumero + " X " + i + " = " + resultado);
+// function suma(nuemro1, numero2) {
+//     resultado = nuemro1 + numero2;
 // }
 
-
-// do While
-
-// let repetir = false;
-
-// do {
-//     console.log("Solo una Vez")
-// } while (repetir);
-
-// let numeroDoWhile = 0;
-// do {
-//     numeroDoWhile = prompt("ingrese un numero")
-//     console.log(numeroDoWhile)
-// } while (parseInt(numeroDoWhile));
-
-// Sentencias Break y Continue
-
-// for(let i = 1; i < 10; i++){
-//     if(i == 5) {
-//         break;
-//     }
-//     console.log("Esta es la Iteracion Nro: " + i + " Usando Break");    
+// function mostrarResultado(mensaje){
+//     console.log("El Resultado es: ", mensaje);
 // }
 
-// for(let i = 1; i < 10; i++){
-//     if(i == 5) {
-//         continue;
-//     }
-//     console.log("Esta es la Iteracion Nro: " + i + " Usando Continue");    
+// suma(3, 5);
+// mostrarResultado(resultado);
+
+// Funciones con Retorno
+// function suma(nuemro1, numero2) {
+//     return console.log("El Resultado es: ", nuemro1 + numero2);
 // }
 
-// Estructura Switch
+// suma(5, 62);
 
-// let numeroDia;
+// Hagamos una Calculadora
 
-// do {
-//     numeroDia = parseInt(prompt("Ingrese el día de la semana (1-7)"));
-//     if (numeroDia < 1 || numeroDia > 7 || isNaN(numeroDia)) {
-//         console.log("Número inválido. Por favor, ingrese un número del 1 al 7.");
-//     }
-// } while (numeroDia < 1 || numeroDia > 7 || isNaN(numeroDia));
-
-// switch (numeroDia) {
-//     case 1:
-//         console.log("Hoy es Lunes");
-//         break;
-//     case 2:
-//         console.log("Hoy es Martes");
-//         break;
-//     case 3:
-//         console.log("Hoy es Miércoles");
-//         break;
-//     case 4:
-//         console.log("Hoy es Jueves");
-//         break;
-//     case 5:
-//         console.log("Hoy es Viernes");
-//         break;
-//     case 6:
-//         console.log("Hoy es Sábado");
-//         break;
-//     case 7:
-//         console.log("Hoy es Domingo");
-//         break;
-// }
-/**
- * Escribe un programa en JavaScript que clasifique números en tres rangos: bajos (1-10), medios (11-20), 
- * y altos (21-30). El programa debe permitir que el usuario ingrese números de manera repetida mediante 
- * prompt hasta que decida detenerse escribiendo la palabra "salir". Los números ingresados deben ser 
- * clasificados y contados según el rango al que pertenecen. Al finalizar, el programa debe mostrar un 
- * resumen con el número total de entradas en cada categoría.
- */
-
-// let bajo = 0;
-// let medio = 0;
-// let alto = 0;
-// let continuar = true;
-
-
-// while (continuar) {
-//     let ingreseNumero = prompt("Ingrese un Numero.! (o escribe 'Salir' para terminar)");
-
-//     if (ingreseNumero.toLowerCase() === "salir") {
-//         continuar = false;
-//         break;
-//     }
-
-//     let numero = parseInt(ingreseNumero);
-
-//     if (isNaN(numero)) {
-//         console.log("Che nabo, ingresa un numero valido.!!");
-//         continue;
-//     }
-
-//     switch (true) {
-//         case (numero >= 1 && numero <= 10):
-//             bajo++;
-//             break;
-//         case (numero > 10 && numero <= 20):
-//             medio++;
-//             break;
-//         case ( numero > 20 && numero <= 30):
-//             alto++;
-//             break;
-//         default:
-//             console.log("Numero fuera de Rango. Ingrese un numero entre 1 y 30.!");
-//             break;
-//     }
-
-// }
-
-// console.log("Cantidad de números Bajos: " + bajo);
-
-// console.log("Cantidad de números Medios: " + medio);
-
-// console.log("Cantidad de números Altos: " + alto);
-
-/**
- * Crea un programa en JavaScript que actúe como una calculadora simple. El programa debe permitir al usuario
- *  ingresar dos números y seleccionar una operación matemática básica (suma, resta, multiplicación o división) 
- * usando un menú presentado a través de prompt. Después de realizar la operación seleccionada, el programa debe 
- * mostrar el resultado al usuario y preguntar si desea realizar otra operación. El programa continuará ejecutándose 
- * hasta que el usuario decida salir escribiendo "salir".
- */
-
-// let continuar;
-
-// do {
-//     let numeroA = parseFloat(prompt("Ingrese el 1er Numero"));
-//     if (isNaN(numeroA)) {
-//         console.log("Che nabo, ingresa un numeroA valido.!!");
-//         continue;
-//     }
-//     let numeroB = parseFloat(prompt("Ingrese el 2do Numero"));
-//     if (isNaN(numeroB)) {
-//         console.log("Che nabo, ingresa un numeroB valido.!!");
-//         continue;
-//     }
-//     let operacion = prompt("Elija la Operacion entre: (+, -, *, /)");
-
-//     let resultado;
-
+// function calculadora(nuemro1, numero2, operacion) {
 //     switch (operacion) {
-//         case '+':
-//             resultado = numeroA + numeroB;
-//             console.log(`El resultado de ${numeroA} + ${numeroB} es igual a ${resultado}`);
-//             break;
-//         case '-':
-//             resultado = numeroA - numeroB;
-//             console.log(`El resultado de ${numeroA} - ${numeroB} es igual a ${resultado}`);
-//             break;
-//         case '*':
-//             resultado = numeroA * numeroB;
-//             console.log(`El resultado de ${numeroA} x ${numeroB} es igual a ${resultado}`);
-//             break;
-//         case '/':
-//             if (numeroB === 0) {
-//                 console.error("Error, No se puede dividir por 0.!!");
+//         case "+":
+//             return console.log("El Resultado de la Suma es: ", nuemro1 + numero2);
+//         case "-":
+//             return console.log("El Resultado de la Resta es: ", nuemro1 - numero2);
+//         case "*":
+//             return console.log("El Resultado de la Multiplicación es: ", nuemro1 * numero2);
+//         case "/":
+//             if (numero2 !== 0) {
+//                 return console.log("El Resultado de la División es: ", nuemro1 / numero2);
 //             } else {
-//                 resultado = numeroA / numeroB;
-//                 console.log(`El resultado de ${numeroA} x ${numeroB} es igual a ${resultado}`);
+//                 return console.error("No se puede dividir por Cero");
 //             }
-//             break;
-//         default:
-//             console.error("Error, Operacion NO Valida.!!");
 //     }
+// }
 
-//     continuar = prompt("¿Quiere realizar otra operacion? (si/no): ").toLowerCase();
+// calculadora(10, 5, '+');
+// calculadora(10, 5, '-');
+// calculadora(10, 5, '*');
+// calculadora(10, 5, '/');
+// calculadora(10, 0, '/');
 
-//     if (continuar.toLowerCase() === "salir" || continuar.toLowerCase() === "no") {
-//         continuar = false;
-//         break;
-//     }
+// function suma(numero1, numero2) {
+//     let resultado = numero1 + numero2;
+//     return console.log("El Resultado es: ", resultado);
+// }
+// suma(5, 8);
 
-// } while (continuar === 'si');
+// Funciones Anonimas
 
-// console.log("Gracias por usar la Calculadora.!");
+// function suma(nuemro1, numero2) {
+//     return console.log("El Resultado es: ", nuemro1 + numero2);
+// }
+
+// const suma = function (a, b) { return console.log("El Resultado es: ", a + b) }
+// suma(5, 6);
+
+// const resta = function (a, b) { return console.log("El Resultado es: ", a - b) }
+// resta(10, 4);
+
+// // Funcion tipo flecha => Tiene un resturn implicito
+// const sumar = (a, b) => { return console.log("El Resultado es: ", a + b) }
+// sumar(10, 8);
+// const restar = (a, b) => console.log("El Resultado es: ", a - b) 
+// restar(10, 8);
+
+// const iva = x => x * 1.21;
+
+// let precio = 1000;
+// console.log("El precio con el IVA es: $", iva(precio));
+
+/**
+ * Ejercicio 28. Crea una función llamada `perimetroRectangulo` que tome la longitud y 
+ * la anchura de un rectángulo como parámetros y devuelva el perímetro del rectángulo.
+ */
+
+// function perimetroRectangulo(longitud, anchura){
+//     return console.log("El perimetro del Rectangulo es de: ", longitud * 2 + anchura * 2);
+// }
+
+// perimetroRectangulo(100, 40);
+
+/**
+ * Ejercicio 10. Declara una variable llamada `esPar` y asígnale una función flecha que tome un número 
+ * como parámetro y devuelva `true` si es par y `false` si es impar.
+ */
+
+// const esPar = a => a % 2 === 0
+
+// console.log(esPar(4));
+// console.log(esPar(5));
+
+/**
+ * 17. Llama a la función `calcularAreaRectangulo` con valores de base y altura 
+ * proporcionados por el usuario e imprime el resultado en la consola.
+ */
+// let ingreseBase = parseInt(prompt("Ingrese la Base del Rectangulo"));
+// let ingreseAltura = parseInt(prompt("Ingrese la Altura del Rectangulo"));
+
+// function calcularAreaRectangulo(base = ingreseBase, altura = ingreseAltura){
+//     return console.log("El area del Rectangulo es igual a: ", base * altura)
+// }
+
+// calcularAreaRectangulo();
+
+/**
+ * 26. Crea una función llamada `areaCirculo` que tome el radio de un 
+ * círculo como parámetro y devuelva el área del círculo.
+ */
+
+// let ingreseRadio = parseInt(prompt("Ingrese la Radio del círculo"));
+
+// const areaCirculo = radio => console.log("El area del círculo es igual a: ", radio * radio * 3.14);
+
+// areaCirculo(ingreseRadio);
+
+/**
+Problema: Calculadora de Edad en Días usando Funciones
+Crea un programa que calcule la edad total de una persona en días utilizando funciones. 
+El programa debe:
+
+Crear una función llamada calcularEdadEnDias que tome tres parámetros: años, meses, y días. La función debe devolver 
+la edad total en días considerando:
+
+1 año = 365 días
+1 mes = 30 días (para simplificar)
+Crear una función llamada solicitarEdad que solicite al usuario que ingrese su edad en años, meses, y días. Esta 
+función debe llamar a calcularEdadEnDias y mostrar el resultado.
+
+Crear una función llamada ejecutarCalculadoraDeEdad que permita al usuario realizar el cálculo varias veces si lo desea, 
+preguntando después de cada cálculo si quiere realizar otro.
+*/
+
+// function calcularEdadEnDias(anios, meses, dias){
+//     return console.log("Llevas ", (anios * 365) + (meses * 30) + dias , " dias de vida.");
+// }
+
+// let aniosVividos = parseInt(prompt("Ingrese Nro de años vividos"));
+// let mesesVividos = parseInt(prompt("Ingrese Nro de meses vividos"));
+// let diasVividos = parseInt(prompt("Ingrese Nro de dias vividos"));
+
+// calcularEdadEnDias(aniosVividos, mesesVividos, diasVividos);
 
 
 
 /**
- * 
- * Escribe un programa en JavaScript que permita al usuario convertir diferentes unidades de longitud 
- * (metros a kilómetros, metros a centímetros, kilómetros a metros, y centímetros a metros). El programa 
- * debe solicitar al usuario que ingrese un valor numérico y la conversión que desea realizar, y luego 
- * mostrar el resultado de la conversión. El usuario debe poder realizar tantas conversiones como desee 
- * hasta que decida salir del programa.
+ * Problema: Juego de Adivinanza de Números
+Crea un programa que permita al usuario jugar un juego de adivinanza de números. 
+El programa debe:
+
+Generar un número aleatorio entre 1 y 100.
+
+Crear una función llamada adivinarNumero que solicite al usuario que adivine el número. 
+La función debe dar pistas si el número ingresado es demasiado alto o bajo y seguir 
+solicitando un nuevo intento hasta que el usuario adivine correctamente.
+
+Crear una función llamada jugarDeNuevo que pregunte al usuario si quiere jugar otra 
+vez después de adivinar el número correctamente.
+
+Crear una función llamada iniciarJuego que inicie el juego y lo reinicie si el usuario
+decide jugar de nuevo.
+
+Mantener un contador de intentos dentro de adivinarNumero para informar al usuario 
+cuántos intentos le tomó adivinar el número correctamente.
  */
 
+// Objeto Math
 
-// let continuar;
+function generarNumeroAleatorio() { // Esto genera un numero aleatorio entre 1 y 100;
+    return Math.floor(Math.random() * 100 + 1);
+}
 
-// do {
-//     let valor = parseFloat(prompt("Ingrese un valor de Longitud: "));
-//     if (isNaN(valor)) {
-//         console.error("Che nabo, ingresa un numeroA valido.!!");
-//         continue;
-//     }
+function adivinarNumero(numeroAleatoreo) {
+    let intentos = 0;
+    let adivinanza;
 
-//     let opcion = prompt("Elija la conversion:\n" +
-//         "1. Metros a Kilómetros\n" + 
-//         "2. Metros a Centímetros\n" +
-//         "3. Kilómetros a Metros\n" + 
-//         "4. Centímetros a Metros\n" +
-//         "Seleccione una Opción entre 1 y 4"
-//     );
+    do {
+        adivinanza = parseInt(prompt("Adivina el Número aleatoreo"))
+        intentos++;
 
-//     let resultado;
+        if (adivinanza < numeroAleatoreo) {
+            console.warn("Muy bajo, Intente nuevamente.!")
+        } else if (adivinanza > numeroAleatoreo) {
+            console.warn("Muy Alto, Intente nuevamente.!")
+        } else if (adivinanza === numeroAleatoreo) {
+            console.log(`¡Correcto! Has ganado en ${intentos} Intentos.!!`)
+        }
 
-//     switch(opcion) {
-//         case '1':
-//             resultado = valor / 1000;
-//             console.log(`${valor} metros son ${resultado} kilómetros`);
-//             break;
-//         case '2':
-//             resultado = valor * 100;
-//             console.log(`${valor} metros son ${resultado} centímetros`);
-//             break;
-//         case '3':
-//             resultado = valor * 1000;
-//             console.log(`${valor} kilómetros son ${resultado} metros`);
-//             break;
-//         case '4':
-//             resultado = valor / 100;
-//             console.log(`${valor} centímetros son ${resultado} metros`);
-//             break;
-//         default:
-//             console.error("Error, Opcion inválida.!")
-//     }
+    } while (adivinanza !== numeroAleatoreo);
 
-//     continuar = prompt("¿Quiere realizar otra conversion? (si/no): ").toLowerCase();
+}
 
-// } while (continuar === 'si');
+function jugarDeNuevo() {
+    return confirm("¿Quiere jugar Nuevamente?"); // Retorna un Boolean
+}
 
-// console.log("Gracias por usar la Calculadora de conversiones.!");
+function iniciarJuego() {
+    do {
+        const numeroAleatoreo = generarNumeroAleatorio();
+        adivinarNumero(numeroAleatoreo);
+    } while (jugarDeNuevo())
 
-/**
- * Crea un programa en JavaScript que permita al usuario convertir entre diferentes escalas de 
- * temperatura: Celsius, Fahrenheit, y Kelvin. El programa debe solicitar al usuario que ingrese 
- * una temperatura y la conversión que desea realizar, y luego mostrar el resultado de la conversión. 
- * El usuario debe poder realizar tantas conversiones como desee hasta que decida salir del programa. 
- */
+}
 
-// let continuar;
-
-// do {
-//     let temperatura = parseFloat(prompt("Ingrese la temperatura:"));
-//     if (isNaN(temperatura)) {
-//         console.log("Che nabo, ingresa una temperatura válida.!!");
-//         continue;
-//     }
-
-//     let opcion = prompt("Elija la conversión:\n" +
-//         "1. Celsius a Fahrenheit\n" +
-//         "2. Celsius a Kelvin\n" +
-//         "3. Fahrenheit a Celsius\n" +
-//         "4. Fahrenheit a Kelvin\n" +
-//         "5. Kelvin a Celsius\n" +
-//         "6. Kelvin a Fahrenheit\n" +
-//         "Seleccione una opción (1, 2, 3, 4, 5, 6):");
-
-//     let resultado;
-
-//     switch (opcion) {
-//         case '1':
-//             resultado = (temperatura * 9/5) + 32;
-//             console.log(`${temperatura}°C son ${resultado}°F.`);
-//             break;
-//         case '2':
-//             resultado = temperatura + 273.15;
-//             console.log(`${temperatura}°C son ${resultado}K.`);
-//             break;
-//         case '3':
-//             resultado = (temperatura - 32) * 5/9;
-//             console.log(`${temperatura}°F son ${resultado}°C.`);
-//             break;
-//         case '4':
-//             resultado = (temperatura - 32) * 5/9 + 273.15;
-//             console.log(`${temperatura}°F son ${resultado}K.`);
-//             break;
-//         case '5':
-//             resultado = temperatura - 273.15;
-//             console.log(`${temperatura}K son ${resultado}°C.`);
-//             break;
-//         case '6':
-//             resultado = (temperatura - 273.15) * 9/5 + 32;
-//             console.log(`${temperatura}K son ${resultado}°F.`);
-//             break;
-//         default:
-//             console.error("Error, opción NO válida.!!");
-//     }
-
-//     continuar = prompt("¿Quiere realizar otra conversión? (si/no): ").toLowerCase();
-
-// } while (continuar === 'si');
-
-// console.log("Gracias por usar el conversor de temperatura.!");
+iniciarJuego();
