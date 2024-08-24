@@ -1,150 +1,452 @@
-### Teoría sobre Bucles en JavaScript
+# Algo de Teoría para complementar lo visto en Clase
 
-#### 1. Bucles `for`
-El bucle `for` es una estructura que permite ejecutar un bloque de código varias veces. Se compone de tres partes principales:
-- **Inicialización:** Se establece una variable de control, normalmente un contador.
-- **Condición:** Mientras la condición sea verdadera, el bucle seguirá ejecutándose.
-- **Incremento/Decremento:** Después de cada iteración, la variable de control se incrementa o decrementa.
+En JavaScript, el **parsing** (parseo) se refiere a convertir datos de un tipo a otro, 
+mientras que `typeof` se utiliza para determinar el tipo de un dato.
 
-**Sintaxis:**
+### Parsing en JavaScript
+
+#### Parseo de cadenas a números
+
+- **`parseInt()`**: Convierte una cadena a un número entero.
+  
+  ```javascript
+  let str = "123";
+  let num = parseInt(str); // 123
+  ```
+
+- **`parseFloat()`**: Convierte una cadena a un número con punto decimal.
+  
+  ```javascript
+  let str = "123.45";
+  let num = parseFloat(str); // 123.45
+  ```
+
+- **`Number()`**: Convierte una cadena a un número. Funciona con enteros y decimales.
+  
+  ```javascript
+  let strInt = "123";
+  let strFloat = "123.45";
+  let numInt = Number(strInt); // 123
+  let numFloat = Number(strFloat); // 123.45
+  ```
+
+#### Parseo de otros tipos de datos
+
+- **`String()`**: Convierte un número o un booleano a una cadena.
+  
+  ```javascript
+  let num = 123;
+  let bool = true;
+  let strNum = String(num); // "123"
+  let strBool = String(bool); // "true"
+  ```
+
+- **`Boolean()`**: Convierte un valor a booleano.
+  
+  ```javascript
+  let str = "hello";
+  let num = 0;
+  let boolStr = Boolean(str); // true
+  let boolNum = Boolean(num); // false
+  ```
+
+### `typeof` en JavaScript
+
+`typeof` es un operador que devuelve una cadena indicando el tipo del operando.
+
+#### Ejemplos de uso de `typeof`
+
 ```javascript
-for (inicialización; condición; incremento/decremento) {
-    // Código a ejecutar
+console.log(typeof 123); // "number"
+console.log(typeof "hello"); // "string"
+console.log(typeof true); // "boolean"
+console.log(typeof undefined); // "undefined"
+console.log(typeof null); // "object" (esto es un error histórico en JavaScript)
+console.log(typeof {}); // "object"
+console.log(typeof []); // "object" (los arrays son un tipo especial de objeto)
+console.log(typeof function(){}); // "function"
+console.log(typeof Symbol()); // "symbol"
+```
+
+#### Uso en combinaciones
+
+Puedes usar `typeof` junto con el parseo para verificar y convertir tipos de datos según sea necesario.
+
+```javascript
+let value = "456";
+if (typeof value === "string") {
+  let num = parseInt(value);
+  console.log(typeof num); // "number"
 }
 ```
 
-**Ejemplo:**
+
+El operador `===` en JavaScript se conoce como el operador de igualdad estricta. Se utiliza para comparar dos valores y verificar si son iguales tanto en valor como en tipo. A diferencia del operador `==`, que solo compara el valor, el operador `===` también compara el tipo de los valores.
+
+### Ejemplos de Uso del Operador `===`
+
+#### Comparación de Números
 ```javascript
-for (let i = 1; i <= 10; i++) {
-    console.log(i); // Imprime los números del 1 al 10
+let num1 = 5;
+let num2 = 5;
+console.log(num1 === num2); // true
+```
+
+#### Comparación de Cadenas
+```javascript
+let str1 = "hello";
+let str2 = "hello";
+console.log(str1 === str2); // true
+```
+
+#### Comparación de Tipos Diferentes
+```javascript
+let num = 5;
+let str = "5";
+console.log(num === str); // false
+```
+
+#### Comparación de Booleanos
+```javascript
+let bool1 = true;
+let bool2 = true;
+console.log(bool1 === bool2); // true
+```
+
+### Diferencias entre `===` y `==`
+
+El operador `==` hace una comparación menos estricta porque realiza conversiones de tipo implícitas si los valores no son del mismo tipo. Esto puede llevar a resultados inesperados.
+
+#### Ejemplos de `==`
+```javascript
+let num = 5;
+let str = "5";
+console.log(num == str); // true (porque se convierte '5' a 5 antes de la comparación)
+```
+
+#### Ejemplos de `===`
+```javascript
+let num = 5;
+let str = "5";
+console.log(num === str); // false (porque no son del mismo tipo)
+```
+
+### ¿Cuándo Utilizar `===`?
+
+#### Evitar Errores de Comparación
+
+Usar `===` ayuda a evitar errores que pueden surgir de las conversiones de tipo implícitas. Esto es especialmente útil cuando trabajas con datos provenientes de diferentes fuentes, como entradas del usuario o datos de una API.
+
+#### Comparación de Tipos
+
+Si necesitas asegurarte de que dos variables no solo tienen el mismo valor, sino también el mismo tipo, `===` es la mejor opción.
+
+#### Código Más Seguro y Legible
+
+El uso de `===` hace que tu código sea más explícito y legible, ya que no se realizan conversiones de tipo detrás de escena. Esto facilita la comprensión del comportamiento del código.
+
+### Ejemplos Prácticos
+
+#### Validación de Entradas de Usuario
+Supongamos que estás desarrollando un formulario que solo acepta números como entrada:
+
+```javascript
+let userInput = prompt("Introduce un número:");
+if (typeof userInput === "string") {
+  userInput = parseInt(userInput, 10);
+}
+if (userInput === 10) {
+  console.log("Has introducido el número 10.");
+} else {
+  console.log("El número introducido no es 10.");
 }
 ```
 
-#### 2. Bucles `while`
-El bucle `while` ejecuta un bloque de código mientras una condición especificada sea verdadera. A diferencia de `for`, `while` evalúa la condición antes de ejecutar el código.
 
-**Sintaxis:**
+## Funciones Recurrentes
+
+### ¿Qué es una función recurrente?
+
+Una función recurrente es una función que se llama a sí misma. Las funciones recurrentes se usan comúnmente para resolver problemas que pueden ser desglosados en subproblemas más pequeños del mismo tipo.
+
+### Ejemplo Básico
+
+Un ejemplo clásico de una función recurrente es la función para calcular el factorial de un número:
+
 ```javascript
-while (condición) {
-    // Código a ejecutar
-}
-```
-
-**Ejemplo:**
-```javascript
-let i = 1;
-while (i <= 10) {
-    console.log(i); // Imprime los números del 1 al 10
-    i++;
-}
-```
-
-#### 3. Bucles `do...while`
-El bucle `do...while` es similar al bucle `while`, pero con una diferencia clave: el bloque de código se ejecuta al menos una vez, ya que la condición se evalúa después de cada ejecución.
-
-**Sintaxis:**
-```javascript
-do {
-    // Código a ejecutar
-} while (condición);
-```
-
-**Ejemplo:**
-```javascript
-let i = 1;
-do {
-    console.log(i); // Imprime los números del 1 al 10
-    i++;
-} while (i <= 10);
-```
-
-### Sentencias `break` y `continue`
-
-#### 4. `break`
-La sentencia `break` se utiliza para salir de un bucle antes de que termine normalmente. Cuando `break` se encuentra dentro de un bucle, el control del programa sale inmediatamente del bucle.
-
-**Ejemplo:**
-```javascript
-for (let i = 1; i <= 10; i++) {
-    if (i === 5) {
-        break; // Sale del bucle cuando i es igual a 5
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
     }
-    console.log(i);
 }
+
+console.log(factorial(5)); // 120
 ```
 
-#### 5. `continue`
-La sentencia `continue` se usa para omitir la iteración actual del bucle y pasar a la siguiente. A diferencia de `break`, `continue` no sale del bucle, sino que salta al siguiente ciclo de la iteración.
+En este ejemplo, la función `factorial` se llama a sí misma hasta que `n` es 0.
 
-**Ejemplo:**
+### Componentes de una función recursiva
+
+Una función recursiva generalmente tiene dos componentes principales:
+1. **Caso base**: Es la condición que detiene la recursión. Sin un caso base, la función seguiría llamándose indefinidamente, lo que podría causar un desbordamiento de pila.
+2. **Caso recursivo**: Es la parte de la función que se llama a sí misma con un subconjunto del problema original.
+
+### Ejemplo de Suma de Números
+
+Este ejemplo muestra una función recursiva que suma los números de 1 a n.
+
 ```javascript
-for (let i = 1; i <= 10; i++) {
-    if (i % 2 === 0) {
-        continue; // Omite los números pares
-    }
-    console.log(i); // Imprime solo números impares
-}
-```
-
-### Estructura `switch`
-
-La sentencia `switch` permite ejecutar uno de varios bloques de código basado en el valor de una expresión. Es útil cuando se necesitan comparar el mismo valor o expresión con varias opciones.
-
-**Sintaxis:**
-```javascript
-switch (expresión) {
-    case valor1:
-        // Código a ejecutar si la expresión es igual a valor1
-        break;
-    case valor2:
-        // Código a ejecutar si la expresión es igual a valor2
-        break;
-    // Más casos...
-    default:
-        // Código a ejecutar si la expresión no coincide con ningún valor
-}
-```
-
-**Ejemplo:**
-```javascript
-let dia = 3;
-switch (dia) {
-    case 1:
-        console.log("Lunes");
-        break;
-    case 2:
-        console.log("Martes");
-        break;
-    case 3:
-        console.log("Miércoles");
-        break;
-    // Más casos...
-    default:
-        console.log("Día no válido");
-}
-```
-
-### Aplicaciones Combinadas
-
-Puedes combinar bucles y sentencias como `break`, `continue`, y `switch` para crear estructuras de control más complejas. Por ejemplo, puedes utilizar un bucle `for` junto con un `switch` para ejecutar diferentes acciones basadas en el valor del contador.
-
-**Ejemplo:**
-```javascript
-for (let i = 1; i <= 10; i++) {
-    switch (i) {
-        case 3:
-            console.log("Número es 3");
-            break;
-        case 5:
-            console.log("Número es 5");
-            break;
-        default:
-            console.log(i);
+function suma(n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return n + suma(n - 1);
     }
 }
+
+console.log(suma(5)); // 15 (5 + 4 + 3 + 2 + 1)
 ```
 
+### Ejemplo de Secuencia de Fibonacci
 
+La secuencia de Fibonacci es una serie de números en la que cada número es la suma de los dos anteriores. Aquí hay una función recursiva para calcular el enésimo número de Fibonacci:
+
+```javascript
+function fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
+
+console.log(fibonacci(6)); // 8 (0, 1, 1, 2, 3, 5, 8)
+```
+
+### Ejemplo de Potencia
+
+Este ejemplo muestra una función recursiva que calcula la potencia de un número.
+
+```javascript
+function potencia(base, exponente) {
+    if (exponente === 0) {
+        return 1;
+    } else {
+        return base * potencia(base, exponente - 1);
+    }
+}
+
+console.log(potencia(2, 3)); // 8 (2^3 = 2 * 2 * 2)
+```
+
+### Ejemplo de Invertir una Cadena
+
+Este ejemplo muestra una función recursiva que invierte una cadena.
+
+```javascript
+function invertirCadena(cadena) {
+    if (cadena === "") {
+        return "";
+    } else {
+        return invertirCadena(cadena.substr(1)) + cadena.charAt(0);
+    }
+}
+
+console.log(invertirCadena("hola")); // "aloh"
+```
+
+### Consideraciones al usar recursividad
+
+- **Eficiencia**: Algunas funciones recursivas pueden ser ineficientes si realizan muchos cálculos repetidos, como la función de Fibonacci que se muestra arriba. Para mejorar la eficiencia, se pueden usar técnicas como la memoización.
+- **Complejidad**: La recursividad puede hacer que el código sea más difícil de entender y depurar. Es importante asegurarse de que el caso base esté correctamente definido para evitar bucles infinitos.
+- **Profundidad de la pila**: Las funciones recursivas utilizan la pila de llamadas. Si la recursión es demasiado profunda, puede causar un desbordamiento de pila. Las iteraciones a menudo pueden ser una alternativa más segura para problemas que requieren muchas llamadas recursivas.
+
+---
+
+## Objetos, Clases, Constructores y `this`
+
+### ¿Qué es un objeto?
+
+En JavaScript, un objeto es una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y un valor. Los valores de las propiedades pueden ser valores primitivos, objetos u otras funciones.
+
+### Ejemplo Básico
+
+```javascript
+const persona = {
+    nombre: 'Ana',
+    edad: 30,
+    saludar: function() {
+        console.log('Hola, mi nombre es ' + this.nombre);
+    }
+};
+
+persona.saludar(); // Hola, mi nombre es Ana
+```
+
+En este ejemplo, `persona` es un objeto con propiedades `nombre`, `edad` y un método `saludar`.
+
+### ¿Qué es un constructor?
+
+En JavaScript, un constructor es una función especial que se utiliza para crear y inicializar objetos cuando se utiliza con la palabra clave `new`.
+
+### Ejemplo Básico de Constructor
+
+```javascript
+function Persona(nombre, edad) {
+    this.nombre = nombre;
+    this.edad = edad;
+}
+
+const persona1 = new Persona('Juan', 25);
+console.log(persona1.nombre); // Juan
+console.log(persona1.edad);   // 25
+```
+
+En este ejemplo, `Persona` es un constructor que inicializa los objetos con propiedades `nombre` y `edad`.
+
+### ¿Qué es una clase?
+
+En JavaScript, una clase es una plantilla para crear objetos. Una clase encapsula datos y funciones que operan sobre esos datos en una sola entidad.
+
+### Ejemplo Básico de Clase
+
+```javascript
+class Persona {
+    constructor(nombre, edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    saludar() {
+        console.log('Hola, mi nombre es ' + this.nombre);
+    }
+}
+
+const persona1 = new Persona('Carlos', 28);
+persona1.saludar(); // Hola, mi nombre es Carlos
+```
+
+En este ejemplo, `Persona` es una clase con un constructor y un método `saludar`.
+
+### Uso de `this`
+
+En JavaScript, `this` es una palabra clave que se refiere al objeto actual en el contexto de ejecución. En una función de objeto, `this` se refiere al objeto al que pertenece la función.
+
+#### Ejemplo Básico de `this`
+
+```javascript
+const persona = {
+    nombre: 'Lucía',
+    edad: 32,
+    saludar: function() {
+        console.log('Hola, mi nombre es ' + this.nombre);
+    }
+};
+
+persona.saludar(); // Hola, mi nombre es Lucía
+```
+
+### Recorrer un Objeto con `for...in`
+
+#### ¿Qué es `for...in`?
+
+El bucle `for...in` itera sobre todas las propiedades enumerables de un objeto.
+
+#### Ejemplo Básico
+
+```javascript
+const persona = {
+    nombre: 'Lucía',
+    edad: 32,
+    profesion: 'Ingeniera'
+};
+
+for (let propiedad in persona) {
+    console.log(propiedad + ': ' + persona[propiedad]);
+}
+
+// nombre: Lucía
+// edad: 32
+// profesion: Ingeniera
+```
+
+En este ejemplo, el bucle `for...in` recorre todas las propiedades del objeto `persona` y las imprime.
+
+### Uso de `in` en Objetos
+
+El operador `in` se utiliza para verificar si una propiedad existe en un objeto.
+
+#### Ejemplo Básico
+
+```javascript
+const persona = {
+    nombre: 'Mario',
+    edad: 40
+};
+
+console.log('nombre' in persona); // true
+console.log('profesion' in persona); // false
+```
+
+En este ejemplo, el operador `in` verifica si las propiedades `nombre` y `profesion` existen en el objeto `persona`.
+
+## Ejemplos Prácticos
+
+### Crear un Objeto Usando un Constructor
+
+```javascript
+function Animal(tipo, sonido) {
+    this.tipo = tipo;
+    this.sonido = sonido;
+}
+
+const perro = new Animal('Perro', 'Ladrido');
+console.log(perro.tipo); // Perro
+console.log(perro.sonido); // Ladrido
+```
+
+### Definir Métodos en una Clase
+
+```javascript
+class Coche {
+    constructor(marca, modelo) {
+        this.marca = marca;
+        this.modelo = modelo;
+    }
+
+    arrancar() {
+        console.log(this.marca + ' ' + this.modelo + ' está arrancando.');
+    }
+}
+
+const miCoche = new Coche('Toyota', 'Corolla');
+miCoche.arrancar(); // Toyota Corolla está arrancando.
+```
+
+### Herencia en Clases
+
+```javascript
+class Animal {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    hacerSonido() {
+        console.log(this.nombre + ' hace un sonido.');
+    }
+}
+
+class Perro extends Animal {
+    hacerSonido() {
+        console.log(this.nombre + ' ladra.');
+    }
+}
+
+const miPerro = new Perro('Rex');
+miPerro.hacerSonido(); // Rex ladra.
+```
 
 ---
 
