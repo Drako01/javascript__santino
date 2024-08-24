@@ -162,6 +162,91 @@ if (userInput === 10) {
 }
 ```
 
+## ¿Qué es una función en JavaScript?
+
+Una función en JavaScript es un bloque de código diseñado para realizar una tarea específica. Piensa en una función como una "receta" que le dice a la computadora exactamente qué pasos debe seguir para hacer algo, como sumar dos números o mostrar un mensaje en la pantalla.
+
+### ¿Por qué usar funciones?
+
+1. **Reutilización**: Puedes escribir una función una vez y usarla tantas veces como quieras.
+2. **Organización**: Las funciones ayudan a mantener el código limpio y organizado.
+3. **Facilidad de mantenimiento**: Si necesitas cambiar algo, solo lo haces en la función, y todos los lugares donde se usa se actualizan automáticamente.
+
+### Cómo crear una función
+
+En JavaScript, se crean funciones utilizando la palabra clave `function`. Aquí hay un ejemplo de una función que suma dos números:
+
+```javascript
+function sumar(a, b) {
+    return a + b;
+}
+```
+
+- `function`: Palabra clave que indica que estás definiendo una función.
+- `sumar`: Nombre de la función (puedes elegir cualquier nombre).
+- `(a, b)`: Los "parámetros" de la función, es decir, las entradas que la función necesita para hacer su trabajo.
+- `{ return a + b; }`: El "cuerpo" de la función, que es el código que se ejecuta cuando llamas a la función. La palabra clave `return` devuelve el resultado de la función.
+
+### Cómo usar (llamar) una función
+
+Una vez que has creado una función, puedes usarla llamándola por su nombre y pasándole los valores (argumentos) que necesita:
+
+```javascript
+let resultado = sumar(3, 5);
+console.log(resultado); // Esto mostrará 8 en la consola
+```
+
+En este ejemplo:
+- `sumar(3, 5)` llama a la función `sumar` y le pasa los valores 3 y 5.
+- La función `sumar` suma esos dos números y devuelve el resultado.
+- El resultado (8) se guarda en la variable `resultado` y luego se imprime en la consola.
+
+### Funciones con o sin parámetros
+
+Las funciones no siempre necesitan parámetros. Por ejemplo, aquí hay una función sin parámetros:
+
+```javascript
+function saludar() {
+    console.log("¡Hola, mundo!");
+}
+```
+
+Y puedes llamarla simplemente así:
+
+```javascript
+saludar(); // Mostrará "¡Hola, mundo!" en la consola
+```
+
+### Funciones anónimas y flecha (Arrow Functions)
+
+En JavaScript, también puedes crear funciones sin nombre, llamadas funciones anónimas. Estas a menudo se usan en situaciones donde la función se pasa como argumento a otra función.
+
+```javascript
+let multiplicar = function(a, b) {
+    return a * b;
+};
+
+console.log(multiplicar(4, 5)); // Mostrará 20 en la consola
+```
+
+Otra forma moderna de escribir funciones en JavaScript es usando **Arrow Functions** (funciones flecha):
+
+```javascript
+let dividir = (a, b) => a / b;
+
+console.log(dividir(10, 2)); // Mostrará 5 en la consola
+```
+
+Las funciones flecha son más compactas y se utilizan mucho en el código moderno.
+
+### Resumen
+
+- **Funciones** son bloques de código reutilizables.
+- **Parámetros** son las entradas que la función necesita.
+- **`return`** se usa para devolver un valor desde una función.
+- Puedes **llamar** a una función para que haga su trabajo.
+- JavaScript también tiene **funciones anónimas** y **funciones flecha**.
+
 
 ## Funciones Recurrentes
 
