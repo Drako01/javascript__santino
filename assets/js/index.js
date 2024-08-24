@@ -1,262 +1,241 @@
-function saludar() {
-    console.log("Hola");
-    console.log(10 + 5);
-    let numero = 0;
-    for (i = 0; i < 10; i++) {
-        console.log("Valor: ", numero + i);
-    }
-}
+// Programacion Orientada a Objetos
+// let nombre = "Santino";
+// let edad = 19;
+// let email = "santino@mail.com";
+// let altura = 1.80;
 
-// saludar();
+// console.log(nombre, edad, email, altura)
+// // Creamos un Objeto Persona
 
-// let nombreIngresado = prompt("Ingrese un Nombre:");
-// console.log("El nombre ingresado es: " + nombreIngresado);
-// nombreIngresado = prompt("Ingrese un Nombre:");
-// console.log("El nombre ingresado es: " + nombreIngresado);
-// nombreIngresado = prompt("Ingrese un Nombre:");
-// console.log("El nombre ingresado es: " + nombreIngresado);
-// nombreIngresado = prompt("Ingrese un Nombre:");
-// console.log("El nombre ingresado es: " + nombreIngresado);
-// nombreIngresado = prompt("Ingrese un Nombre:");
-// console.log("El nombre ingresado es: " + nombreIngresado);
-
-// function solicitarNombre() {
-//     let nombreIngresado = prompt("Ingrese un Nombre:");
-//     console.log("El nombre ingresado es: " + nombreIngresado);
+// const persona1 = {
+//     nombre: "Santino",
+//     edad: 19,
+//     email: "santino@mail.com",
+//     altura: 1.80
 // }
 
-// solicitarNombre();
-// solicitarNombre();
-// solicitarNombre();
-// solicitarNombre();
-
-
-// Funciones con Parametros
-// function mostrarNombre(nombre){
-//     console.log(nombre);
-// }
-// // mostrarNombre("Santino");
-
-// function suma(nuemro1, numero2) {
-//     console.log(nuemro1 + numero2);
-// }
-// suma(2, 5);
-// suma(6, 9);
-// suma("Alejandro", " Di Stefano");
-
-// let nombreIngresado = prompt("Ingrese un Nombre:");
-
-// function solicitarNombre(pirulo) {
-//     console.log("El nombre ingresado es: " + pirulo);
+// const persona2 = {
+//     nombre: "Alejandro",
+//     edad: 48,
+//     email: "alejandro@mail.com",
+//     altura: 1.80
 // }
 
-// solicitarNombre(nombreIngresado); // Santino
-// solicitarNombre("Alejandro");
-// let resultado = 0;
+// console.log(persona1);
+// console.log(persona2);
 
-// function suma(nuemro1, numero2) {
-//     resultado = nuemro1 + numero2;
+// const objeto = {
+//     clave: "Valor",
+//     clave: "Valor",
+//     clave: "Valor",
+//     clave: "Valor",
 // }
 
-// function mostrarResultado(mensaje){
-//     console.log("El Resultado es: ", mensaje);
+// console.log(persona1.nombre);
+// console.log(persona1["email"]);
+
+// persona1["email"] = "santinocorregido@mail.com";
+// console.log(persona1["email"]);
+
+// Uso de Constructores
+// Uso de this
+// function Persona(nombre, edad, altura, email) {
+//     this.nombre = nombre;
+//     this.edad = edad;
+//     this.altura = altura;
+//     this.email = email;
 // }
 
-// suma(3, 5);
-// mostrarResultado(resultado);
+// // Instancia de Objeto
+// const persona1 = new Persona("Santino", 19, 1.80, "santino@mail.com");
+// const persona2 = new Persona("Alejandro", 48, 1.80, "alejandro@mail.com");
 
-// Funciones con Retorno
-// function suma(nuemro1, numero2) {
-//     return console.log("El Resultado es: ", nuemro1 + numero2);
+// console.log(persona1);
+// console.log(persona2);
+
+// Crear Objetos usando literales
+// function Persona(objeto) { // Le paso el Objeto 
+//     this.nombre = objeto.nombre;
+//     this.edad = objeto.edad;
+//     this.altura = objeto.altura;
+//     this.email = objeto.email;
 // }
 
-// suma(5, 62);
+// const persona1 = new Persona({
+//     nombre: "Santino",
+//     edad: 19,
+//     email: "santino@mail.com",
+//     altura: 1.80
+// })
 
-// Hagamos una Calculadora
+// console.log(persona1);
 
-// function calculadora(nuemro1, numero2, operacion) {
-//     switch (operacion) {
-//         case "+":
-//             return console.log("El Resultado de la Suma es: ", nuemro1 + numero2);
-//         case "-":
-//             return console.log("El Resultado de la Resta es: ", nuemro1 - numero2);
-//         case "*":
-//             return console.log("El Resultado de la Multiplicación es: ", nuemro1 * numero2);
-//         case "/":
-//             if (numero2 !== 0) {
-//                 return console.log("El Resultado de la División es: ", nuemro1 / numero2);
-//             } else {
-//                 return console.error("No se puede dividir por Cero");
-//             }
+// Diferencia entre funcion y metodo
+// let cadena = "Hola Santino";
+// let numero = 10;
+
+// console.log(typeof(cadena));
+// console.log(typeof(numero));
+
+// // El String es un Objeto que tiene sus propios metodos
+// console.log(cadena.toUpperCase());
+// console.log(cadena.toLowerCase());
+// console.log(cadena.length); // Cuenta la cantidad de caracteres de la cadena
+
+// function saludar(){
+//     console.log("Hola")
+// }
+
+// saludar() // Funcion
+// toUpperCase() // Metodo => Solo puede ser llamada desde el Objeto en el cual fue creado
+// cadena.toLowerCase()
+
+// // Los Objetos tiene Atributos y Metodos
+// function Persona(nombre, edad, altura, email) {
+//     // Atributos
+//     this.nombre = nombre;
+//     this.edad = edad;
+//     this.altura = altura;
+//     this.email = email;
+//     // Metodos
+//     this.hablar = function () { console.log("Hola soy " + this.nombre) };
+//     this.caminar = function () { console.log("Hola, soy " + this.nombre + " y estoy caminando") };
+// }
+
+// const persona1 = new Persona("Santino", 19, 1.80, "santino@mail.com");
+// // const persona2 = new Persona("Alejandro", 48, 1.80, "alejandro@mail.com");
+// console.log(persona1);
+
+// persona1.hablar();
+// persona2.hablar();
+
+// persona1.caminar();
+// persona2.caminar();
+
+// Operador IN
+
+// console.log("nombre" in persona1); // true
+// console.log("apellido" in persona1); // false
+
+// for(let i = 0; i < 5; i++){
+//     console.log("Vuelta Nro: " + i)
+// }
+
+// for in
+// for (const propiedad in persona1) {
+//     console.log(persona1[propiedad]); // Por cada propiedad de persona1, haceme un console.log de esa propiedad
+// }
+
+// for(const propiedad in persona2) {
+//     console.log(persona1[propiedad]);
+// }
+
+/**
+ * Operador IN
+ * El operador in devuelve true si la propiedad especificada existe en el objeto. 
+ * 
+ * Operador FOR...IN
+    Mientras que el bucle for...in permite acceder a todas las propiedades del objeto, 
+    obteniendo una propiedad por cada iteración.
+ */
+
+// Clases
+// class Vehiculo{
+
+//     // Atributos
+//     constructor(color, tipo, ruedas, marca, motor){
+//         this.color = color;
+//         this.tipo = tipo;
+//         this.ruedas = ruedas;
+//         this.marca = marca;
+//         this.motor = motor;
+//     }
+
+//     // Metodos
+//     encender() {
+//         console.log("El/La " + this.tipo + " esta Encendido");
 //     }
 // }
 
-// calculadora(10, 5, '+');
-// calculadora(10, 5, '-');
-// calculadora(10, 5, '*');
-// calculadora(10, 5, '/');
-// calculadora(10, 0, '/');
+// const auto = new Vehiculo("Azul", "Auto", 4, "Ford", 1.6);
+// auto.encender()
+// console.log(auto);
 
-// function suma(numero1, numero2) {
-//     let resultado = numero1 + numero2;
-//     return console.log("El Resultado es: ", resultado);
-// }
-// suma(5, 8);
+// const moto = new Vehiculo("Blanco", "Moto", 2, "BMW", 650);
+// moto.encender()
+// console.log(moto);
 
-// Funciones Anonimas
+class Producto {
 
-// function suma(nuemro1, numero2) {
-//     return console.log("El Resultado es: ", nuemro1 + numero2);
-// }
+    constructor(nombre, precio, stock, categoria){
+        this.nombre = nombre;
+        this.precio = parseFloat(precio);
+        this.stock = parseInt(stock);
+        this.categoria = categoria;
+        this.vendido = false;
+    }
 
-// const suma = function (a, b) { return console.log("El Resultado es: ", a + b) }
-// suma(5, 6);
+    sumarIva() {
+        this.precio = (this.precio * 1.21).toFixed(2);
+    }
 
-// const resta = function (a, b) { return console.log("El Resultado es: ", a - b) }
-// resta(10, 4);
+    vender(cantidad){
+        this.cantidad = cantidad;
+        this.vendido = true;
+        this.stock = this.stock - this.cantidad;
+        console.log("El producto " + this.nombre + " se vendio.!");
+        console.log("Ahora quedan ", this.stock);        
+    }
 
-// // Funcion tipo flecha => Tiene un resturn implicito
-// const sumar = (a, b) => { return console.log("El Resultado es: ", a + b) }
-// sumar(10, 8);
-// const restar = (a, b) => console.log("El Resultado es: ", a - b) 
-// restar(10, 8);
-
-// const iva = x => x * 1.21;
-
-// let precio = 1000;
-// console.log("El precio con el IVA es: $", iva(precio));
-
-/**
- * Ejercicio 28. Crea una función llamada `perimetroRectangulo` que tome la longitud y 
- * la anchura de un rectángulo como parámetros y devuelva el perímetro del rectángulo.
- */
-
-// function perimetroRectangulo(longitud, anchura){
-//     return console.log("El perimetro del Rectangulo es de: ", longitud * 2 + anchura * 2);
-// }
-
-// perimetroRectangulo(100, 40);
-
-/**
- * Ejercicio 10. Declara una variable llamada `esPar` y asígnale una función flecha que tome un número 
- * como parámetro y devuelva `true` si es par y `false` si es impar.
- */
-
-// const esPar = a => a % 2 === 0
-
-// console.log(esPar(4));
-// console.log(esPar(5));
-
-/**
- * 17. Llama a la función `calcularAreaRectangulo` con valores de base y altura 
- * proporcionados por el usuario e imprime el resultado en la consola.
- */
-// let ingreseBase = parseInt(prompt("Ingrese la Base del Rectangulo"));
-// let ingreseAltura = parseInt(prompt("Ingrese la Altura del Rectangulo"));
-
-// function calcularAreaRectangulo(base = ingreseBase, altura = ingreseAltura){
-//     return console.log("El area del Rectangulo es igual a: ", base * altura)
-// }
-
-// calcularAreaRectangulo();
-
-/**
- * 26. Crea una función llamada `areaCirculo` que tome el radio de un 
- * círculo como parámetro y devuelva el área del círculo.
- */
-
-// let ingreseRadio = parseInt(prompt("Ingrese la Radio del círculo"));
-
-// const areaCirculo = radio => console.log("El area del círculo es igual a: ", radio * radio * 3.14);
-
-// areaCirculo(ingreseRadio);
-
-/**
-Problema: Calculadora de Edad en Días usando Funciones
-Crea un programa que calcule la edad total de una persona en días utilizando funciones. 
-El programa debe:
-
-Crear una función llamada calcularEdadEnDias que tome tres parámetros: años, meses, y días. La función debe devolver 
-la edad total en días considerando:
-
-1 año = 365 días
-1 mes = 30 días (para simplificar)
-Crear una función llamada solicitarEdad que solicite al usuario que ingrese su edad en años, meses, y días. Esta 
-función debe llamar a calcularEdadEnDias y mostrar el resultado.
-
-Crear una función llamada ejecutarCalculadoraDeEdad que permita al usuario realizar el cálculo varias veces si lo desea, 
-preguntando después de cada cálculo si quiere realizar otro.
-*/
-
-// function calcularEdadEnDias(anios, meses, dias){
-//     return console.log("Llevas ", (anios * 365) + (meses * 30) + dias , " dias de vida.");
-// }
-
-// let aniosVividos = parseInt(prompt("Ingrese Nro de años vividos"));
-// let mesesVividos = parseInt(prompt("Ingrese Nro de meses vividos"));
-// let diasVividos = parseInt(prompt("Ingrese Nro de dias vividos"));
-
-// calcularEdadEnDias(aniosVividos, mesesVividos, diasVividos);
-
-
-
-/**
- * Problema: Juego de Adivinanza de Números
-Crea un programa que permita al usuario jugar un juego de adivinanza de números. 
-El programa debe:
-
-Generar un número aleatorio entre 1 y 100.
-
-Crear una función llamada adivinarNumero que solicite al usuario que adivine el número. 
-La función debe dar pistas si el número ingresado es demasiado alto o bajo y seguir 
-solicitando un nuevo intento hasta que el usuario adivine correctamente.
-
-Crear una función llamada jugarDeNuevo que pregunte al usuario si quiere jugar otra 
-vez después de adivinar el número correctamente.
-
-Crear una función llamada iniciarJuego que inicie el juego y lo reinicie si el usuario
-decide jugar de nuevo.
-
-Mantener un contador de intentos dentro de adivinarNumero para informar al usuario 
-cuántos intentos le tomó adivinar el número correctamente.
- */
-
-// Objeto Math
-
-function generarNumeroAleatorio() { // Esto genera un numero aleatorio entre 1 y 100;
-    return Math.floor(Math.random() * 100 + 1);
-}
-
-function adivinarNumero(numeroAleatoreo) {
-    let intentos = 0;
-    let adivinanza;
-
-    do {
-        adivinanza = parseInt(prompt("Adivina el Número aleatoreo"))
-        intentos++;
-
-        if (adivinanza < numeroAleatoreo) {
-            console.warn("Muy bajo, Intente nuevamente.!")
-        } else if (adivinanza > numeroAleatoreo) {
-            console.warn("Muy Alto, Intente nuevamente.!")
-        } else if (adivinanza === numeroAleatoreo) {
-            console.log(`¡Correcto! Has ganado en ${intentos} Intentos.!!`)
-        }
-
-    } while (adivinanza !== numeroAleatoreo);
+    mostrarInfo(){
+        console.log(`Producto ${this.nombre}`);
+        console.log(`Precio $${this.precio}`);
+        console.log(`Stock ${this.stock} Unidades`);
+        console.log(`Categoria ${this.categoria}`);
+    }
 
 }
 
-function jugarDeNuevo() {
-    return confirm("¿Quiere jugar Nuevamente?"); // Retorna un Boolean
+// const producto1 = new Producto("Azucar", 1250.50, 100, "Almacen");
+// const producto2 = new Producto("Fernet", 10890.50, 100, "Bebidas");
+
+// console.log(producto1);
+// producto1.sumarIva();
+// producto1.vender(4);
+// console.log(producto2);
+// producto2.sumarIva();
+// producto2.vender(15);
+
+let continuar = true;
+let contador = 1;
+let productos = {};
+
+while(continuar){
+    let nombre = prompt("Ingrese nombre del Producto");
+    let precio = prompt("Ingrese el precio");
+    let stock = prompt("Catidad actual");
+    let categoria = prompt("Categoria?");
+
+    let producto = new Producto(nombre, precio, stock, categoria);
+
+    productos[`producto${contador}`] = producto;
+
+    producto.sumarIva();
+    producto.mostrarInfo();
+
+    let vender = prompt("¿Desea vender uno de estos Productos? (si/no)");
+    if(vender.toLowerCase() === "si"){
+        let cantidad = prompt("¿Cuantas Unidades quiere vender?");
+        producto.vender(parseInt(cantidad));
+    }
+
+    let respuesta = prompt("¿Desea agregar un nuevo producto? (si/no)");
+    if(respuesta.toLowerCase() !== "si"){
+        continuar = false;
+    }
+
+    contador++;
+
 }
 
-function iniciarJuego() {
-    do {
-        const numeroAleatoreo = generarNumeroAleatorio();
-        adivinarNumero(numeroAleatoreo);
-    } while (jugarDeNuevo())
-
-}
-
-iniciarJuego();
+console.log("Proceso terminado...");
