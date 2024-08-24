@@ -184,7 +184,8 @@ class Producto {
         this.vendido = true;
         this.stock = this.stock - this.cantidad;
         console.log("El producto " + this.nombre + " se vendio.!");
-        console.log("Ahora quedan ", this.stock);        
+        console.log("Se vendieron " + this.cantidad + " unidades de " + this.nombre);
+        console.log("Ahora quedan ", this.stock, " Unidades");        
     }
 
     mostrarInfo(){
