@@ -1,128 +1,8 @@
-// class Producto {
-
-//     constructor(nombre, precio, stock, categoria){
-//         this.nombre = nombre;
-//         this.precio = parseFloat(precio);
-//         this.stock = parseInt(stock);
-//         this.categoria = categoria;
-//         this.vendido = false;
-//     }
-
-//     sumarIva() {
-//         this.precio = (this.precio * 1.21).toFixed(2);
-//     }
-
-//     vender(cantidad){
-//         this.cantidad = cantidad;
-//         this.vendido = true;
-//         this.stock = this.stock - this.cantidad;
-//         console.log("El producto " + this.nombre + " se vendio.!");
-//         console.log("Se vendieron " + this.cantidad + " unidades de " + this.nombre);
-//         console.log("Ahora quedan ", this.stock, " Unidades");
-//     }
-
-//     mostrarInfo(){
-//         console.log(`Producto ${this.nombre}`);
-//         console.log(`Precio $${this.precio}`);
-//         console.log(`Stock ${this.stock} Unidades`);
-//         console.log(`Categoria ${this.categoria}`);
-//     }
-
-// }
+# Explicacion paso a paso de como resolver el Ejercicio 10.
 
 
-// let continuar = true;
-// let contador = 1;
-// let productos = {};
-
-// while(continuar){
-//     let nombre = prompt("Ingrese nombre del Producto");
-//     let precio = prompt("Ingrese el precio");
-//     let stock = prompt("Catidad actual");
-//     let categoria = prompt("Categoria?");
-
-//     let producto = new Producto(nombre, precio, stock, categoria);
-
-//     productos[`producto${contador}`] = producto;
-
-//     producto.sumarIva();
-//     producto.mostrarInfo();
-
-//     let vender = prompt("¿Desea vender uno de estos Productos? (si/no)");
-//     if(vender.toLowerCase() === "si"){
-//         let cantidad = prompt("¿Cuantas Unidades quiere vender?");
-//         producto.vender(parseInt(cantidad));
-//     }
-
-//     let respuesta = prompt("¿Desea agregar un nuevo producto? (si/no)");
-//     if(respuesta.toLowerCase() !== "si"){
-//         continuar = false;
-//     }
-
-//     contador++;
-
-// }
-
-// console.log("Proceso terminado...");
-
-
-/**
- * Problema 10: Calculadora de Pago de Estacionamiento
-    Descripción:
-
-    Crea un programa que calcule el costo del estacionamiento en un garaje. El usuario debe ingresar el número de horas que 
-    ha estacionado su vehículo y el programa debe calcular el costo total en función de la siguiente tarifa:
-
-    Las primeras dos horas: $5 cada una.
-    A partir de la tercera hora: $3 por hora adicional.
-    El programa debe mostrar el costo total y permitir que el usuario calcule el costo para varios vehículos.
- */
-
-// function calcularCostoDelEstacionamiento(horas) {
-
-//     const tarifaPrimerasDosHoras = 5;
-//     const tarifaHorasAdicionales = 3;
-//     let costoTotal;
-
-//     if (horas <= 2 && horas > 0) {
-//         costoTotal = tarifaPrimerasDosHoras * horas;
-//     } else {
-//         costoTotal = (2 * tarifaPrimerasDosHoras) + ((horas - 2) * tarifaHorasAdicionales);
-//     }
-
-//     return costoTotal;
-// }
-
-// function calcularEstacionamiento() {
-//     let continuar = true;
-//     let costoAcumulado = 0;
-
-//     do {
-//         let horas = parseFloat(prompt("Ingrese el número de horas que estuvo estacionado:"));
-
-//         if (isNaN(horas) || horas < 0) {
-//             console.error("Error, Ingrese un Valor correcto de Horas.!!");
-//             continue;
-//         }
-
-//         let costo = calcularCostoDelEstacionamiento(horas); // Devuelve un Valor
-//         costoAcumulado += costo;
-//         console.log(`El costo del Estacionamiento es de: $${costo}.- ARG
-//                     El Costo Acumulado es de: $${costoAcumulado}.- ARG
-//                     `);
-
-//         continuar = confirm("¿Desea calcular el Costo de Otro Vehiculo? (si/no)");
-
-//     } while (continuar)
-//     console.log(`El costo Total a Pagar del Estacionamiento es de: $${costoAcumulado}.- ARG`);
-// }
-
-
-// calcularEstacionamiento();
-
-
-/**
- * Problema: Simulador de Gestión de Inventario de una Tienda
+```javascript
+Problema: Simulador de Gestión de Inventario de una Tienda
     Descripción:
     Imagina que estás desarrollando un simulador para gestionar el inventario de una tienda. En este simulador, cada producto tiene un 
     nombre, un precio y una cantidad en stock. Debes permitir que el usuario realice las siguientes acciones:
@@ -149,8 +29,12 @@
     El usuario agrega otro producto: "Naranjas", $2.00, 20 unidades.
     El usuario decide mostrar el inventario completo.
     Finalmente, el usuario sale del programa.
- */
+```
 
+
+### Paso 1: Definición de la clase `Producto`
+
+```javascript
 class Producto {
     constructor(nombre, precio, stock) {
         this.nombre = nombre;
@@ -158,7 +42,14 @@ class Producto {
         this.stock = stock;
         this.siguiente = null;
     }
+```
 
+- **Clase `Producto`:** Este es un plano (o plantilla) que define cómo se verá cada producto en nuestro inventario.
+- **`constructor(nombre, precio, stock)`:** Este método especial se ejecuta cuando creamos un nuevo producto. Se encarga de asignar el nombre, precio y stock del producto. Además, crea un enlace (`this.siguiente`) que inicialmente es `null`, y que usaremos para enlazar productos en una lista.
+
+### Paso 2: Métodos de la clase `Producto`
+
+```javascript
     vender(cantidadVendida) {
         if (cantidadVendida <= this.stock) {
             this.stock -= cantidadVendida;
@@ -172,12 +63,26 @@ class Producto {
         console.log(`Producto: ${this.nombre}\n Precio: $${this.precio}.-\n Stock: ${this.stock} Unidades.`);
     }
 }
+```
 
+- **`vender(cantidadVendida)`:** Este método resta la cantidad vendida del stock del producto si hay suficiente stock disponible. Si no hay suficiente, muestra un mensaje de error.
+- **`mostrarInformacion()`:** Este método muestra los detalles del producto, como su nombre, precio y la cantidad que queda en stock.
+
+### Paso 3: Definición de la clase `Inventario`
+
+```javascript
 class Inventario {
     constructor(){
-        this.primerProducto = null; // Referencia al Primer Producto de la Lista
+        this.primerProducto = null;
     }
+```
 
+- **Clase `Inventario`:** Este es el plano que define cómo gestionaremos el conjunto de productos.
+- **`constructor()`:** Inicializa el inventario. Al principio, `primerProducto` es `null`, lo que significa que no hay ningún producto en el inventario.
+
+### Paso 4: Métodos de la clase `Inventario`
+
+```javascript
     agregarProducto(nombre, precio, cantidad) {
         let nuevoProducto = new Producto(nombre, precio, cantidad);
         if(this.primerProducto === null) {
@@ -187,16 +92,23 @@ class Inventario {
             while(siguienteProducto.siguiente !== null) {
                 siguienteProducto = siguienteProducto.siguiente;
             }
-
             siguienteProducto.siguiente = nuevoProducto;
         }
 
         console.log(`Producto ${nombre} agregado al Inventario.!`)
     }
+```
 
+- **`agregarProducto(nombre, precio, cantidad)`:** 
+    1. Crea un nuevo producto usando la clase `Producto`.
+    2. Si el inventario está vacío (`primerProducto` es `null`), el nuevo producto se convierte en el primer producto del inventario.
+    3. Si ya hay productos en el inventario, busca el último producto en la lista y enlaza el nuevo producto al final de la lista.
+    4. Muestra un mensaje indicando que el producto se ha agregado al inventario.
+
+```javascript
     venderProducto(nombre, cantidad) {
         let actual = this.primerProducto;
-        while(actual !== null) { // Mientras existan Productos
+        while(actual !== null) {
             if(actual.nombre === nombre) {
                 actual.vender(cantidad);
                 return;
@@ -206,7 +118,15 @@ class Inventario {
 
         console.error(`El Producto ${nombre} no esta en el Inventario.!`);
     }
+```
 
+- **`venderProducto(nombre, cantidad)`:** 
+    1. Comienza con el primer producto en el inventario (`primerProducto`).
+    2. Recorre la lista de productos uno por uno, buscando el producto con el nombre especificado.
+    3. Si lo encuentra, llama al método `vender()` de ese producto para reducir su stock.
+    4. Si no encuentra el producto, muestra un mensaje de error.
+
+```javascript
     mostrarInventario(){
         if(this.primerProducto === null) {
             console.warn("El Inventario esta Vacio.!");
@@ -219,11 +139,18 @@ class Inventario {
         }
     }
 }
+```
 
+- **`mostrarInventario()`:** 
+    1. Si no hay productos en el inventario, muestra un mensaje advirtiendo que está vacío.
+    2. Si hay productos, recorre la lista y muestra la información de cada producto usando el método `mostrarInformacion()`.
+
+### Paso 5: Programa Principal
+
+```javascript
 function principal() {
     let inventario = new Inventario();
     let continuar = true;
-
 
     while(continuar) {
         let opcion = prompt(
@@ -260,9 +187,15 @@ function principal() {
 }
 
 principal();
+```
 
-/**
- * Explicacion:
- * 
- *  ver:  /teoria/explicacion_ej10.md
- */
+- **`principal()`:** Esta es la función que controla todo el programa.
+    1. **`let inventario = new Inventario();`**: Crea un nuevo inventario vacío.
+    2. **`let continuar = true;`**: Define una variable para controlar si el programa sigue corriendo.
+    3. **`while(continuar) { ... }`**: Mantiene el programa en ejecución hasta que el usuario decida salir.
+    4. **`switch(opcion)`**: Dependiendo de la opción elegida, el programa permite agregar un producto, vender un producto, mostrar el inventario o salir.
+    5. **Opciones:**
+       - **Opción 1:** Permite al usuario agregar un producto pidiéndole el nombre, precio y cantidad.
+       - **Opción 2:** Permite al usuario vender un producto pidiendo el nombre y la cantidad.
+       - **Opción 3:** Muestra todos los productos en el inventario.
+       - **Opción 4:** Sale del programa.
