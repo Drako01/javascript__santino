@@ -510,28 +510,76 @@ const miCoche = new Coche('Toyota', 'Corolla');
 miCoche.arrancar(); // Toyota Corolla está arrancando.
 ```
 
-### Herencia en Clases
+
+## Herencia en Clases
+
+### ¿Qué es la Herencia?
+
+**Herencia** es un concepto en programación que permite que una clase tome (herede) propiedades y métodos de otra clase. Es como cuando un hijo hereda características de sus padres. En JavaScript, esto permite que una nueva clase (llamada **subclase** o **clase hija**) utilice el código de una clase existente (llamada **superclase** o **clase madre**), sin tener que escribirlo nuevamente.
+
+#### Ejemplo de Herencia
+
+Imagina que tienes una clase `Animal`, que tiene una propiedad `nombre` y un método `hacerSonido`. Luego, creas una nueva clase `Perro` que hereda de `Animal`.
 
 ```javascript
+// Clase base o superclase
 class Animal {
     constructor(nombre) {
-        this.nombre = nombre;
+        this.nombre = nombre; // Propiedad nombre
     }
 
     hacerSonido() {
-        console.log(this.nombre + ' hace un sonido.');
+        console.log(this.nombre + ' hace un sonido.'); // Método que imprime un mensaje
     }
 }
 
+// Subclase que hereda de Animal
 class Perro extends Animal {
     hacerSonido() {
-        console.log(this.nombre + ' ladra.');
+        console.log(this.nombre + ' ladra.'); // Método que sobrescribe el comportamiento
     }
 }
 
 const miPerro = new Perro('Rex');
-miPerro.hacerSonido(); // Rex ladra.
+miPerro.hacerSonido(); // Muestra "Rex ladra."
 ```
+
+En este ejemplo:
+- `Perro` hereda de `Animal`. Esto significa que `Perro` obtiene la propiedad `nombre` automáticamente.
+- `Perro` tiene su propio método `hacerSonido`, que reemplaza al método `hacerSonido` de `Animal`. Por eso, cuando llamas a `hacerSonido`, el perro "ladra" en lugar de hacer un sonido genérico.
+
+### ¿Qué es el Polimorfismo?
+
+**Polimorfismo** es una palabra larga que significa "muchas formas". En programación, el polimorfismo te permite utilizar un mismo método en diferentes clases, pero con un comportamiento específico para cada clase. En otras palabras, aunque el método tenga el mismo nombre en varias clases, cada clase lo ejecuta de manera diferente.
+
+#### Ejemplo de Polimorfismo
+
+Sigamos con el ejemplo anterior. Ahora agregamos otra clase, `Gato`, que también hereda de `Animal` pero hace algo diferente cuando se le dice que haga un sonido.
+
+```javascript
+class Gato extends Animal {
+    hacerSonido() {
+        console.log(this.nombre + ' maúlla.'); // El gato maúlla
+    }
+}
+
+const miGato = new Gato('Misu');
+miGato.hacerSonido(); // Muestra "Misu maúlla."
+
+const otroPerro = new Perro('Fido');
+otroPerro.hacerSonido(); // Muestra "Fido ladra."
+```
+
+Aquí:
+- Tanto `Gato` como `Perro` heredan de `Animal` y ambos tienen un método llamado `hacerSonido`.
+- Sin embargo, el método `hacerSonido` se comporta de manera diferente en `Gato` (maúlla) y en `Perro` (ladra).
+- Esto es polimorfismo: el mismo método (`hacerSonido`) tiene diferentes comportamientos según la clase que lo implemente.
+
+### Resumiendo
+
+- **Herencia**: Permite que una clase (como `Perro` o `Gato`) use las propiedades y métodos de otra clase (como `Animal`).
+- **Polimorfismo**: Permite que un método (como `hacerSonido`) haga cosas diferentes dependiendo de la clase en la que se encuentre.
+
 
 ---
 
