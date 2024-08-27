@@ -1,242 +1,268 @@
-// Programacion Orientada a Objetos
-// let nombre = "Santino";
-// let edad = 19;
-// let email = "santino@mail.com";
-// let altura = 1.80;
+// class Producto {
 
-// console.log(nombre, edad, email, altura)
-// // Creamos un Objeto Persona
+//     constructor(nombre, precio, stock, categoria){
+//         this.nombre = nombre;
+//         this.precio = parseFloat(precio);
+//         this.stock = parseInt(stock);
+//         this.categoria = categoria;
+//         this.vendido = false;
+//     }
 
-// const persona1 = {
-//     nombre: "Santino",
-//     edad: 19,
-//     email: "santino@mail.com",
-//     altura: 1.80
+//     sumarIva() {
+//         this.precio = (this.precio * 1.21).toFixed(2);
+//     }
+
+//     vender(cantidad){
+//         this.cantidad = cantidad;
+//         this.vendido = true;
+//         this.stock = this.stock - this.cantidad;
+//         console.log("El producto " + this.nombre + " se vendio.!");
+//         console.log("Se vendieron " + this.cantidad + " unidades de " + this.nombre);
+//         console.log("Ahora quedan ", this.stock, " Unidades");
+//     }
+
+//     mostrarInfo(){
+//         console.log(`Producto ${this.nombre}`);
+//         console.log(`Precio $${this.precio}`);
+//         console.log(`Stock ${this.stock} Unidades`);
+//         console.log(`Categoria ${this.categoria}`);
+//     }
+
 // }
 
-// const persona2 = {
-//     nombre: "Alejandro",
-//     edad: 48,
-//     email: "alejandro@mail.com",
-//     altura: 1.80
+
+// let continuar = true;
+// let contador = 1;
+// let productos = {};
+
+// while(continuar){
+//     let nombre = prompt("Ingrese nombre del Producto");
+//     let precio = prompt("Ingrese el precio");
+//     let stock = prompt("Catidad actual");
+//     let categoria = prompt("Categoria?");
+
+//     let producto = new Producto(nombre, precio, stock, categoria);
+
+//     productos[`producto${contador}`] = producto;
+
+//     producto.sumarIva();
+//     producto.mostrarInfo();
+
+//     let vender = prompt("¿Desea vender uno de estos Productos? (si/no)");
+//     if(vender.toLowerCase() === "si"){
+//         let cantidad = prompt("¿Cuantas Unidades quiere vender?");
+//         producto.vender(parseInt(cantidad));
+//     }
+
+//     let respuesta = prompt("¿Desea agregar un nuevo producto? (si/no)");
+//     if(respuesta.toLowerCase() !== "si"){
+//         continuar = false;
+//     }
+
+//     contador++;
+
 // }
 
-// console.log(persona1);
-// console.log(persona2);
+// console.log("Proceso terminado...");
 
-// const objeto = {
-//     clave: "Valor",
-//     clave: "Valor",
-//     clave: "Valor",
-//     clave: "Valor",
-// }
-
-// console.log(persona1.nombre);
-// console.log(persona1["email"]);
-
-// persona1["email"] = "santinocorregido@mail.com";
-// console.log(persona1["email"]);
-
-// Uso de Constructores
-// Uso de this
-// function Persona(nombre, edad, altura, email) {
-//     this.nombre = nombre;
-//     this.edad = edad;
-//     this.altura = altura;
-//     this.email = email;
-// }
-
-// // Instancia de Objeto
-// const persona1 = new Persona("Santino", 19, 1.80, "santino@mail.com");
-// const persona2 = new Persona("Alejandro", 48, 1.80, "alejandro@mail.com");
-
-// console.log(persona1);
-// console.log(persona2);
-
-// Crear Objetos usando literales
-// function Persona(objeto) { // Le paso el Objeto 
-//     this.nombre = objeto.nombre;
-//     this.edad = objeto.edad;
-//     this.altura = objeto.altura;
-//     this.email = objeto.email;
-// }
-
-// const persona1 = new Persona({
-//     nombre: "Santino",
-//     edad: 19,
-//     email: "santino@mail.com",
-//     altura: 1.80
-// })
-
-// console.log(persona1);
-
-// Diferencia entre funcion y metodo
-// let cadena = "Hola Santino";
-// let numero = 10;
-
-// console.log(typeof(cadena));
-// console.log(typeof(numero));
-
-// // El String es un Objeto que tiene sus propios metodos
-// console.log(cadena.toUpperCase());
-// console.log(cadena.toLowerCase());
-// console.log(cadena.length); // Cuenta la cantidad de caracteres de la cadena
-
-// function saludar(){
-//     console.log("Hola")
-// }
-
-// saludar() // Funcion
-// toUpperCase() // Metodo => Solo puede ser llamada desde el Objeto en el cual fue creado
-// cadena.toLowerCase()
-
-// // Los Objetos tiene Atributos y Metodos
-// function Persona(nombre, edad, altura, email) {
-//     // Atributos
-//     this.nombre = nombre;
-//     this.edad = edad;
-//     this.altura = altura;
-//     this.email = email;
-//     // Metodos
-//     this.hablar = function () { console.log("Hola soy " + this.nombre) };
-//     this.caminar = function () { console.log("Hola, soy " + this.nombre + " y estoy caminando") };
-// }
-
-// const persona1 = new Persona("Santino", 19, 1.80, "santino@mail.com");
-// // const persona2 = new Persona("Alejandro", 48, 1.80, "alejandro@mail.com");
-// console.log(persona1);
-
-// persona1.hablar();
-// persona2.hablar();
-
-// persona1.caminar();
-// persona2.caminar();
-
-// Operador IN
-
-// console.log("nombre" in persona1); // true
-// console.log("apellido" in persona1); // false
-
-// for(let i = 0; i < 5; i++){
-//     console.log("Vuelta Nro: " + i)
-// }
-
-// for in
-// for (const propiedad in persona1) {
-//     console.log(persona1[propiedad]); // Por cada propiedad de persona1, haceme un console.log de esa propiedad
-// }
-
-// for(const propiedad in persona2) {
-//     console.log(persona1[propiedad]);
-// }
 
 /**
- * Operador IN
- * El operador in devuelve true si la propiedad especificada existe en el objeto. 
- * 
- * Operador FOR...IN
-    Mientras que el bucle for...in permite acceder a todas las propiedades del objeto, 
-    obteniendo una propiedad por cada iteración.
+ * Problema 10: Calculadora de Pago de Estacionamiento
+    Descripción:
+
+    Crea un programa que calcule el costo del estacionamiento en un garaje. El usuario debe ingresar el número de horas que 
+    ha estacionado su vehículo y el programa debe calcular el costo total en función de la siguiente tarifa:
+
+    Las primeras dos horas: $5 cada una.
+    A partir de la tercera hora: $3 por hora adicional.
+    El programa debe mostrar el costo total y permitir que el usuario calcule el costo para varios vehículos.
  */
 
-// Clases
-// class Vehiculo{
+// function calcularCostoDelEstacionamiento(horas) {
 
-//     // Atributos
-//     constructor(color, tipo, ruedas, marca, motor){
-//         this.color = color;
-//         this.tipo = tipo;
-//         this.ruedas = ruedas;
-//         this.marca = marca;
-//         this.motor = motor;
+//     const tarifaPrimerasDosHoras = 5;
+//     const tarifaHorasAdicionales = 3;
+//     let costoTotal;
+
+//     if (horas <= 2 && horas > 0) {
+//         costoTotal = tarifaPrimerasDosHoras * horas;
+//     } else {
+//         costoTotal = (2 * tarifaPrimerasDosHoras) + ((horas - 2) * tarifaHorasAdicionales);
 //     }
 
-//     // Metodos
-//     encender() {
-//         console.log("El/La " + this.tipo + " esta Encendido");
-//     }
+//     return costoTotal;
 // }
 
-// const auto = new Vehiculo("Azul", "Auto", 4, "Ford", 1.6);
-// auto.encender()
-// console.log(auto);
+// function calcularEstacionamiento() {
+//     let continuar = true;
+//     let costoAcumulado = 0;
 
-// const moto = new Vehiculo("Blanco", "Moto", 2, "BMW", 650);
-// moto.encender()
-// console.log(moto);
+//     do {
+//         let horas = parseFloat(prompt("Ingrese el número de horas que estuvo estacionado:"));
+
+//         if (isNaN(horas) || horas < 0) {
+//             console.error("Error, Ingrese un Valor correcto de Horas.!!");
+//             continue;
+//         }
+
+//         let costo = calcularCostoDelEstacionamiento(horas); // Devuelve un Valor
+//         costoAcumulado += costo;
+//         console.log(`El costo del Estacionamiento es de: $${costo}.- ARG
+//                     El Costo Acumulado es de: $${costoAcumulado}.- ARG
+//                     `);
+
+//         continuar = confirm("¿Desea calcular el Costo de Otro Vehiculo? (si/no)");
+
+//     } while (continuar)
+//     console.log(`El costo Total a Pagar del Estacionamiento es de: $${costoAcumulado}.- ARG`);
+// }
+
+
+// calcularEstacionamiento();
+
+
+/**
+ * Problema: Simulador de Gestión de Inventario de una Tienda
+    Descripción:
+    Imagina que estás desarrollando un simulador para gestionar el inventario de una tienda. En este simulador, cada producto tiene un 
+    nombre, un precio y una cantidad en stock. Debes permitir que el usuario realice las siguientes acciones:
+
+    Agregar un nuevo producto al inventario.
+    Vender un producto, lo que reduce la cantidad en stock.
+    Mostrar el inventario completo, listando todos los productos con su nombre, precio y cantidad en stock.
+    Salir del programa.
+    Cada una de estas acciones debe ser manejada por un método en la clase Producto o en una clase Inventario. El programa debe seguir 
+    funcionando hasta que el usuario elija salir.
+
+    Requisitos:
+    Crea una clase Producto que tenga atributos para el nombre, el precio y la cantidad en stock. La clase también debe tener métodos 
+    para vender el producto y para mostrar la información del producto.
+
+    Crea una clase Inventario que tenga métodos para agregar un nuevo producto, vender un producto (buscando por nombre), y mostrar el 
+    inventario completo.
+
+    Usa un ciclo para permitir que el usuario realice múltiples acciones hasta que decida salir.
+
+    Ejemplo de uso:
+    El usuario agrega un nuevo producto: "Manzanas", $1.50, 30 unidades.
+    Luego, el usuario vende 5 unidades de "Manzanas".
+    El usuario agrega otro producto: "Naranjas", $2.00, 20 unidades.
+    El usuario decide mostrar el inventario completo.
+    Finalmente, el usuario sale del programa.
+ */
 
 class Producto {
-
-    constructor(nombre, precio, stock, categoria){
+    constructor(nombre, precio, stock) {
         this.nombre = nombre;
-        this.precio = parseFloat(precio);
-        this.stock = parseInt(stock);
-        this.categoria = categoria;
-        this.vendido = false;
+        this.precio = precio;
+        this.stock = stock;
+        this.siguiente = null;
     }
 
-    sumarIva() {
-        this.precio = (this.precio * 1.21).toFixed(2);
+    vender(cantidadVendida) {
+        if (cantidadVendida <= this.stock) {
+            this.stock -= cantidadVendida;
+            console.log(`Se vendieron ${cantidadVendida} unidades de ${this.nombre}`);
+        } else {
+            console.error(`Error, No hay suficiente ${this.nombre} en Stock para realizar esta Venta.!`)
+        }
     }
 
-    vender(cantidad){
-        this.cantidad = cantidad;
-        this.vendido = true;
-        this.stock = this.stock - this.cantidad;
-        console.log("El producto " + this.nombre + " se vendio.!");
-        console.log("Se vendieron " + this.cantidad + " unidades de " + this.nombre);
-        console.log("Ahora quedan ", this.stock, " Unidades");        
+    mostrarInformacion() {
+        console.log(`Producto: ${this.nombre}\n Precio: $${this.precio}.-\n Stock: ${this.stock} Unidades.`);
     }
-
-    mostrarInfo(){
-        console.log(`Producto ${this.nombre}`);
-        console.log(`Precio $${this.precio}`);
-        console.log(`Stock ${this.stock} Unidades`);
-        console.log(`Categoria ${this.categoria}`);
-    }
-
 }
 
-// const producto1 = new Producto("Azucar", 1250.50, 100, "Almacen");
-// const producto2 = new Producto("Fernet", 10890.50, 100, "Bebidas");
-
-// console.log(producto1);
-// producto1.sumarIva();
-// producto1.vender(4);
-// console.log(producto2);
-// producto2.sumarIva();
-// producto2.vender(15);
-
-let continuar = true;
-let contador = 1;
-let productos = {};
-
-while(continuar){
-    let nombre = prompt("Ingrese nombre del Producto");
-    let precio = prompt("Ingrese el precio");
-    let stock = prompt("Catidad actual");
-    let categoria = prompt("Categoria?");
-
-    let producto = new Producto(nombre, precio, stock, categoria);
-
-    productos[`producto${contador}`] = producto;
-
-    producto.sumarIva();
-    producto.mostrarInfo();
-
-    let vender = prompt("¿Desea vender uno de estos Productos? (si/no)");
-    if(vender.toLowerCase() === "si"){
-        let cantidad = prompt("¿Cuantas Unidades quiere vender?");
-        producto.vender(parseInt(cantidad));
+class Inventario {
+    constructor(){
+        this.primerProducto = null; // Referencia al Primer Producto de la Lista
     }
 
-    let respuesta = prompt("¿Desea agregar un nuevo producto? (si/no)");
-    if(respuesta.toLowerCase() !== "si"){
-        continuar = false;
+    agregarProducto(nombre, precio, cantidad) {
+        let nuevoProducto = new Producto(nombre, precio, cantidad);
+        if(this.primerProducto === null) {
+            this.primerProducto = nuevoProducto;
+        } else {
+            let siguienteProducto = this.primerProducto;
+            while(siguienteProducto.siguiente !== null) {
+                siguienteProducto = siguienteProducto.siguiente;
+            }
+
+            siguienteProducto.siguiente = nuevoProducto;
+        }
+
+        console.log(`Producto ${nombre} agregado al Inventario.!`)
     }
 
-    contador++;
+    venderProducto(nombre, cantidad) {
+        let actual = this.primerProducto;
+        while(actual !== null) { // Mientras existan Productos
+            if(actual.nombre === nombre) {
+                actual.vender(cantidad);
+                return;
+            }
+            actual = actual.siguiente;
+        }
 
+        console.error(`El Producto ${nombre} no esta en el Inventario.!`);
+    }
+
+    mostrarInventario(){
+        if(this.primerProducto === null) {
+            console.warn("El Inventario esta Vacio.!");
+        } else {
+            let actual = this.primerProducto;
+            while(actual !== null) { 
+                actual.mostrarInformacion();
+                actual = actual.siguiente;
+            }
+        }
+    }
 }
 
-console.log("Proceso terminado...");
+function principal() {
+    let inventario = new Inventario();
+    let continuar = true;
+
+
+    while(continuar) {
+        let opcion = prompt(
+            "Seleccione una Opcion:\n" +
+            "1. Agregar producto\n" + 
+            "2. Vender Producto\n" + 
+            "3. Mostrar Inventario\n" +
+            "4. Salir"
+        );
+
+        switch(opcion){
+            case '1':
+                let nombre = prompt("Ingrese el nombre del Producto:");
+                let precio = parseFloat(prompt("Ingrese el Precio: "));
+                let cantidad = parseInt(prompt("Ingrese la cantidad: "));
+                inventario.agregarProducto(nombre, precio, cantidad);
+                break;
+            case '2':
+                let nombreVenta = prompt("Ingrese el Nombre del Producto a Vender: ");
+                let cantidadVenta = parseInt(prompt("Ingrese la Cantidad a Vender:"));
+                inventario.venderProducto(nombreVenta, cantidadVenta);
+                break;
+            case '3': 
+                inventario.mostrarInventario();
+                break;
+            case '4':
+                continuar = false;
+                console.log("Saliendo del Programa...");
+                break;
+            default:
+                console.error("Error, Opción no valida. Intente Nuevamente.!")
+        }
+    }
+}
+
+principal();
+
+/**
+ * Explicacion:
+ * 
+ * 
+ */
