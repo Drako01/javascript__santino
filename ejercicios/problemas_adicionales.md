@@ -78,3 +78,134 @@ Crea un programa que gestione un inventario completo de productos usando una est
 
 ---
 
+
+### **Problema 7: Convertidor de Temperatura**
+**Nivel de dificultad: Básico**
+
+**Descripción:**
+Crea un programa que convierta una temperatura de grados Celsius a Fahrenheit. El usuario debe ingresar la temperatura en grados Celsius, y el programa debe mostrar la temperatura equivalente en grados Fahrenheit.
+
+**Objetivos:**
+- Uso de variables.
+- Uso de operadores aritméticos.
+- Manejo de entradas y salidas con `prompt` y `console.log`.
+
+---
+
+### **Problema 8: Identificador de Números Positivos y Negativos**
+**Nivel de dificultad: Básico**
+
+**Descripción:**
+Crea un programa que identifique si un número ingresado por el usuario es positivo, negativo o cero. El programa debe mostrar un mensaje indicando el tipo de número ingresado.
+
+**Objetivos:**
+- Uso de condicionales (`if`).
+- Manejo de entradas y salidas.
+
+---
+
+### **Problema 9: Contador de Vocales**
+**Nivel de dificultad: Básico**
+
+**Descripción:**
+Crea un programa que cuente cuántas vocales tiene una palabra ingresada por el usuario. El programa debe recorrer la palabra y contar cuántas de las letras son vocales.
+
+**Objetivos:**
+- Uso de ciclos (`for` o `while`).
+- Uso de condicionales (`if`).
+- Manejo de entradas y salidas.
+
+---
+
+### **Problema 10: Calculadora de Edad**
+**Nivel de dificultad: Intermedio**
+
+**Descripción:**
+Crea un programa que calcule la edad de una persona basada en su año de nacimiento. El usuario debe ingresar su año de nacimiento, y el programa debe mostrar su edad actual.
+
+**Objetivos:**
+- Creación de funciones para realizar cálculos.
+- Uso de operadores aritméticos.
+- Manejo de entradas y salidas.
+
+---
+
+### **Problema 11: Validación de Usuario**
+**Nivel de dificultad: Intermedio**
+
+**Descripción:**
+Crea un programa que valide el nombre de usuario y contraseña ingresados por un usuario. El programa debe comparar los datos ingresados con un usuario y contraseña predefinidos y mostrar un mensaje si las credenciales son correctas o incorrectas.
+
+**Objetivos:**
+- Uso de objetos para almacenar datos de usuario.
+- Uso de funciones para validar las credenciales.
+- Manejo de condicionales y entradas/salidas.
+
+---
+
+
+### **Problema 12: Contador de Números**
+**Nivel de dificultad: Intermedio**
+
+**Descripción:**
+Crea un programa que cuente desde un número dado por el usuario hasta otro número también ingresado por el usuario. El programa debe mostrar cada número en la consola.
+
+**Objetivos:**
+- Uso de ciclos (`for` o `while`).
+- Manejo de entradas y salidas.
+
+
+---
+
+### **Problema 13: Calculadora de IMC**
+**Nivel de dificultad: Intermedio**
+
+**Descripción:**
+Crea un programa que calcule el Índice de Masa Corporal (IMC) de una persona. El usuario debe ingresar su peso en kilogramos y su altura en metros. El programa debe calcular y mostrar su IMC, junto con un mensaje que indique si está en un rango saludable, bajo peso o sobrepeso.
+
+**Objetivos:**
+- Uso de funciones para realizar cálculos.
+- Uso de condicionales para determinar el rango de IMC.
+- Manejo de entradas y salidas.
+
+---
+
+### **Problema 14: Perfil de Mascota**
+**Nivel de dificultad: Intermedio**
+
+**Descripción:**
+Crea un programa que permita al usuario crear un perfil de su mascota. El programa debe permitir al usuario ingresar el nombre, edad y tipo de mascota, y luego mostrar la información completa.
+
+**Objetivos:**
+- Uso de objetos para almacenar los datos de la mascota.
+- Uso de funciones para establecer y mostrar las propiedades del objeto.
+- Manejo de entradas y salidas.
+
+---
+
+### **Problema 15: Calculadora de Propina**
+**Nivel de dificultad: Intermedio**
+
+**Descripción:**
+Crea un programa que calcule la propina que se debe dejar en un restaurante. El usuario debe ingresar el total de la cuenta y el porcentaje de propina que desea dejar. El programa debe mostrar la cantidad de propina y el total a pagar.
+
+**Objetivos:**
+- Uso de funciones para realizar cálculos.
+- Uso de operadores aritméticos.
+- Manejo de entradas y salidas.
+
+---
+
+### **Problema 16: Simulador de Cajero Automático**
+**Nivel de dificultad: Intermedio-Avanzado**
+
+**Descripción:**
+Crea un programa que simule un cajero automático básico. El programa debe permitir al usuario ingresar su saldo inicial, retirar dinero y mostrar el saldo restante después de cada transacción. El programa debe asegurarse de que el usuario no pueda retirar más dinero del que tiene en su cuenta.
+
+**Objetivos:**
+- Uso de objetos para almacenar el saldo del usuario.
+- Uso de métodos para manipular el saldo (retirar dinero).
+- Uso de condicionales para validar las transacciones.
+- Manejo de entradas y salidas.
+
+---
