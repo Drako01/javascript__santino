@@ -474,30 +474,30 @@ Crea un programa que simule una agenda de contactos básica.
  * 
  */
 
-class Usuario{
-    constructor(nombre, edad, email){
-        this.nombre = nombre;
-        this.edad = edad;
-        this.email = email
-    }
-    mostrarPerfilDeUsuario(){
-        console.log(
-                        "Perfil del Usuario:\n" + 
-                        "-------------------\n" + 
-                        "Nombre: " + this.nombre + "\n" +
-                        "Edad: " + this.edad + "\n" +
-                        "Correo Electrónico: " + this.email
-                    )
-    }
-}
+// class Usuario{
+//     constructor(nombre, edad, email){
+//         this.nombre = nombre;
+//         this.edad = edad;
+//         this.email = email
+//     }
+//     mostrarPerfilDeUsuario(){
+//         console.log(
+//                         "Perfil del Usuario:\n" + 
+//                         "-------------------\n" + 
+//                         "Nombre: " + this.nombre + "\n" +
+//                         "Edad: " + this.edad + "\n" +
+//                         "Correo Electrónico: " + this.email
+//                     )
+//     }
+// }
 
-let nombreUsuario = prompt("Ingrese el Nombre del Usuario");
-let edadUsuario = parseInt(prompt("Ingrese la Edad del Usuario"));
-if (isNaN(edadUsuario) || edadUsuario <= 0){
-    console.error("Error, Ingrese una Edad correcta")
-}
-let emailUsuario = prompt("Ingrese el Email del Usuario");
+// let nombreUsuario = prompt("Ingrese el Nombre del Usuario");
+// let edadUsuario = parseInt(prompt("Ingrese la Edad del Usuario"));
+// if (isNaN(edadUsuario) || edadUsuario <= 0){
+//     console.error("Error, Ingrese una Edad correcta")
+// }
+// let emailUsuario = prompt("Ingrese el Email del Usuario");
 
-const usuario1 = new Usuario(nombreUsuario, edadUsuario, emailUsuario);
+// const usuario1 = new Usuario(nombreUsuario, edadUsuario, emailUsuario);
 
-usuario1.mostrarPerfilDeUsuario();
+// usuario1.mostrarPerfilDeUsuario();
