@@ -151,118 +151,327 @@
     Finalmente, el usuario sale del programa.
  */
 
-class Producto {
-    constructor(nombre, precio, stock) {
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-        this.siguiente = null;
-    }
+// class Producto {
+//     constructor(nombre, precio, stock) {
+//         this.nombre = nombre;
+//         this.precio = precio;
+//         this.stock = stock;
+//         this.siguiente = null;
+//     }
 
-    vender(cantidadVendida) {
-        if (cantidadVendida <= this.stock) {
-            this.stock -= cantidadVendida;
-            console.log(`Se vendieron ${cantidadVendida} unidades de ${this.nombre}`);
-        } else {
-            console.error(`Error, No hay suficiente ${this.nombre} en Stock para realizar esta Venta.!`)
-        }
-    }
+//     vender(cantidadVendida) {
+//         if (cantidadVendida <= this.stock) {
+//             this.stock -= cantidadVendida;
+//             console.log(`Se vendieron ${cantidadVendida} unidades de ${this.nombre}`);
+//         } else {
+//             console.error(`Error, No hay suficiente ${this.nombre} en Stock para realizar esta Venta.!`)
+//         }
+//     }
 
-    mostrarInformacion() {
-        console.log(`Producto: ${this.nombre}\n Precio: $${this.precio}.-\n Stock: ${this.stock} Unidades.`);
-    }
-}
+//     mostrarInformacion() {
+//         console.log(`Producto: ${this.nombre}\n Precio: $${this.precio}.-\n Stock: ${this.stock} Unidades.`);
+//     }
+// }
 
-class Inventario {
-    constructor(){
-        this.primerProducto = null; // Referencia al Primer Producto de la Lista
-    }
+// class Inventario {
+//     constructor(){
+//         this.primerProducto = null; // Referencia al Primer Producto de la Lista
+//     }
 
-    agregarProducto(nombre, precio, cantidad) {
-        let nuevoProducto = new Producto(nombre, precio, cantidad);
-        if(this.primerProducto === null) {
-            this.primerProducto = nuevoProducto;
-        } else {
-            let siguienteProducto = this.primerProducto;
-            while(siguienteProducto.siguiente !== null) {
-                siguienteProducto = siguienteProducto.siguiente;
-            }
+//     agregarProducto(nombre, precio, cantidad) {
+//         let nuevoProducto = new Producto(nombre, precio, cantidad);
+//         if(this.primerProducto === null) {
+//             this.primerProducto = nuevoProducto;
+//         } else {
+//             let siguienteProducto = this.primerProducto;
+//             while(siguienteProducto.siguiente !== null) {
+//                 siguienteProducto = siguienteProducto.siguiente;
+//             }
 
-            siguienteProducto.siguiente = nuevoProducto;
-        }
+//             siguienteProducto.siguiente = nuevoProducto;
+//         }
 
-        console.log(`Producto ${nombre} agregado al Inventario.!`)
-    }
+//         console.log(`Producto ${nombre} agregado al Inventario.!`)
+//     }
 
-    venderProducto(nombre, cantidad) {
-        let actual = this.primerProducto;
-        while(actual !== null) { // Mientras existan Productos
-            if(actual.nombre === nombre) {
-                actual.vender(cantidad);
-                return;
-            }
-            actual = actual.siguiente;
-        }
+//     venderProducto(nombre, cantidad) {
+//         let actual = this.primerProducto;
+//         while(actual !== null) { // Mientras existan Productos
+//             if(actual.nombre === nombre) {
+//                 actual.vender(cantidad);
+//                 return;
+//             }
+//             actual = actual.siguiente;
+//         }
 
-        console.error(`El Producto ${nombre} no esta en el Inventario.!`);
-    }
+//         console.error(`El Producto ${nombre} no esta en el Inventario.!`);
+//     }
 
-    mostrarInventario(){
-        if(this.primerProducto === null) {
-            console.warn("El Inventario esta Vacio.!");
-        } else {
-            let actual = this.primerProducto;
-            while(actual !== null) { 
-                actual.mostrarInformacion();
-                actual = actual.siguiente;
-            }
-        }
-    }
-}
+//     mostrarInventario(){
+//         if(this.primerProducto === null) {
+//             console.warn("El Inventario esta Vacio.!");
+//         } else {
+//             let actual = this.primerProducto;
+//             while(actual !== null) { 
+//                 actual.mostrarInformacion();
+//                 actual = actual.siguiente;
+//             }
+//         }
+//     }
+// }
 
-function principal() {
-    let inventario = new Inventario();
-    let continuar = true;
+// function principal() {
+//     let inventario = new Inventario();
+//     let continuar = true;
 
 
-    while(continuar) {
-        let opcion = prompt(
-            "Seleccione una Opcion:\n" +
-            "1. Agregar producto\n" + 
-            "2. Vender Producto\n" + 
-            "3. Mostrar Inventario\n" +
-            "4. Salir"
-        );
+//     while(continuar) {
+//         let opcion = prompt(
+//             "Seleccione una Opcion:\n" +
+//             "1. Agregar producto\n" + 
+//             "2. Vender Producto\n" + 
+//             "3. Mostrar Inventario\n" +
+//             "4. Salir"
+//         );
 
-        switch(opcion){
-            case '1':
-                let nombre = prompt("Ingrese el nombre del Producto:");
-                let precio = parseFloat(prompt("Ingrese el Precio: "));
-                let cantidad = parseInt(prompt("Ingrese la cantidad: "));
-                inventario.agregarProducto(nombre, precio, cantidad);
-                break;
-            case '2':
-                let nombreVenta = prompt("Ingrese el Nombre del Producto a Vender: ");
-                let cantidadVenta = parseInt(prompt("Ingrese la Cantidad a Vender:"));
-                inventario.venderProducto(nombreVenta, cantidadVenta);
-                break;
-            case '3': 
-                inventario.mostrarInventario();
-                break;
-            case '4':
-                continuar = false;
-                console.log("Saliendo del Programa...");
-                break;
-            default:
-                console.error("Error, Opción no valida. Intente Nuevamente.!")
-        }
-    }
-}
+//         switch(opcion){
+//             case '1':
+//                 let nombre = prompt("Ingrese el nombre del Producto:");
+//                 let precio = parseFloat(prompt("Ingrese el Precio: "));
+//                 let cantidad = parseInt(prompt("Ingrese la cantidad: "));
+//                 inventario.agregarProducto(nombre, precio, cantidad);
+//                 break;
+//             case '2':
+//                 let nombreVenta = prompt("Ingrese el Nombre del Producto a Vender: ");
+//                 let cantidadVenta = parseInt(prompt("Ingrese la Cantidad a Vender:"));
+//                 inventario.venderProducto(nombreVenta, cantidadVenta);
+//                 break;
+//             case '3': 
+//                 inventario.mostrarInventario();
+//                 break;
+//             case '4':
+//                 continuar = false;
+//                 console.log("Saliendo del Programa...");
+//                 break;
+//             default:
+//                 console.error("Error, Opción no valida. Intente Nuevamente.!")
+//         }
+//     }
+// }
 
-principal();
+// principal();
 
 /**
  * Explicacion:
  * 
  *  ver:  /teoria/explicacion_ej10.md
+ */
+
+
+/**
+ * 
+ * ### Problema 1: Calculadora de Descuentos
+**Nivel de dificultad: Básico**
+
+**Descripción:**
+    Crea un programa que calcule el precio final de un producto después de aplicar un descuento. 
+    El usuario debe ingresar el precio original del producto y el porcentaje de descuento. 
+    El programa debe mostrar el precio final.
+
+**Objetivos:**
+- Uso de variables.
+- Uso de operadores aritméticos.
+- Manejo de entradas y salidas con `prompt` y `console.log`.
+ */
+
+// let precioOriginal = parseFloat(prompt("Ingrese el precio original del Producto"));
+// let porcentajeDescuento = parseFloat(prompt("Ingrese el porcentaje de Descuento a Aplicar"));
+
+// console.log("El Precio final es: $", precioOriginal - (precioOriginal * porcentajeDescuento / 100))
+
+/**
+ * ### Problema 2: Contador de Números Pares
+**Nivel de dificultad: Básico**
+
+**Descripción:**
+    Crea un programa que cuente cuántos números pares hay entre 1 y 
+    un número dado por el usuario. El programa debe usar un ciclo 
+    para recorrer los números y contar cuántos son pares.
+
+**Objetivos:**
+- Uso de ciclos (`for` o `while`).
+- Uso de condicionales (`if`).
+- Manejo de entradas y salidas.
+ */
+
+// let limite = parseInt(prompt("Ingrese un numero"));
+
+// let contador = 0;
+
+// for(let i = 1; i <= limite; i++) { // i es el Iterador
+//     if(i % 2 === 0) { // Esto es para los Pares
+//         contador++;
+//     }
+// }
+
+// console.log("La antidad de Numeros Pares entre 1 y " 
+//             + limite + ", es de: " + contador + " números.");
+
+/**
+ * ### Problema 3: Calculadora de Sueldos
+**Nivel de dificultad: Intermedio**
+
+**Descripción:**
+    Crea un programa que calcule el sueldo total de un empleado 
+    basado en su salario base y las horas extra trabajadas. 
+    El programa debe pedir al usuario el salario base, el número de 
+    horas extra, y la tarifa de pago por hora extra. Luego, el programa 
+    debe calcular y mostrar el sueldo total.
+
+**Objetivos:**
+- Creación de funciones para realizar cálculos.
+- Uso de operadores aritméticos.
+- Uso de condicionales y ciclos para validar entradas.
+ */
+
+// let salarioBase = parseFloat(prompt("Ingrese el salario Base: "))
+// let horasExtra = parseInt(prompt("Ingrese la cantidad de Horas Extra"))
+// let tarifaHoraExtra = parseFloat(prompt("Ingrese la tarifa de la Hora Extra"))
+
+// const calcularSueldo = (salario, horas, tarifa) => {
+//     let pagoExtra = horas * tarifa;    
+//     return salario + pagoExtra;
+// }
+
+// let sueldoTotal = calcularSueldo(salarioBase, horasExtra, tarifaHoraExtra);
+
+// console.log("El sueldo total es de: $",  sueldoTotal.toFixed(2)) // .toFixed(2) limita la cantidad de Decimales de un Flotante a 2 y ademas lo convierte a un String
+
+/**
+ * ### Problema 4: Agenda de Contactos
+**Nivel de dificultad: Intermedio**
+
+**Descripción:**
+Crea un programa que simule una agenda de contactos básica. 
+    El programa debe permitir al usuario agregar un contacto (nombre y número de teléfono)
+    y mostrar todos los contactos guardados. Debe ser capaz de almacenar múltiples contactos.
+
+**Objetivos:**
+- Introducción al uso de objetos en JavaScript.
+- Uso de funciones para agregar y mostrar contactos.
+- Uso de un ciclo para recorrer los contactos.
+
+ */
+
+// let agenda = []; // Definimos un Array (lista) vacio.
+
+// const agregarContacto = (nombre , telefono) => {
+//     let contacto = {
+//         nombre: nombre,
+//         telefono: telefono
+//     }
+//     agenda.push(contacto);
+// }
+
+// const mostrarContacto = () => {
+//     console.log(agenda);
+// }
+
+// let continuar;
+
+// do{
+//     let nombre = prompt("Ingrese un Nombre");
+//     let telefono = parseInt(prompt("Ingrese el telefono"));
+
+//     if(isNaN(telefono) || telefono <= 0) {
+//         console.error("Ingrese un telefono valido")
+//         continue;
+//     }
+
+//     agregarContacto(nombre, telefono);
+
+//     continuar = prompt("¿Desea cargar otro contacto? (si/no)").toLowerCase();
+
+// }while(continuar === 'si');
+
+// mostrarContacto();
+
+/**
+ * ### Problema 5: Sistema de Gestión de Productos (Versión Simplificada)
+**Nivel de dificultad: Intermedio-Avanzado**
+
+**Descripción:**
+    Crea un programa que permita gestionar un solo producto en un inventario. 
+    El programa debe permitir al usuario agregar un producto con su nombre, precio 
+    y cantidad en stock, vender parte del stock y mostrar la información del producto.
+
+**Objetivos:**
+- Creación de una clase `Producto`.
+- Uso de métodos para manipular los datos del producto.
+- Uso de un ciclo para interactuar con el usuario.
+ */
+
+// class Producto {
+//     constructor(nombreParametro, precioParametro, stockParametro) {
+//         this.nombre = nombreParametro;
+//         this.precio = precioParametro;
+//         this.stock = stockParametro;
+//     }
+
+//     vender(cantidad) {
+//         if(cantidad <= this.stock) {
+//             this.stock -= cantidad;
+//             console.log(`Se vendieron ${cantidad} Unidades de ${this.nombre}`);
+//         } else {
+//             console.error("Error, no hay suficiente Stock para vender " + cantidad 
+//                             + " Unidades de " + this.nombre + ".!")
+//         }
+//     }
+
+//     mostrarInformacion() {
+//         console.log(
+//             "Producto: " + this.nombre + "\n" +
+//             "Precio: $" + this.precio + "\n" +
+//             "Stock Disponible: " + this.stock + " Unidades\n"
+//         )
+//     }
+// }
+
+// let nombreProducto = prompt("Ingrese el Nombre del Producto");
+// let precioProducto = parseFloat(prompt("Ingrese el Precio"));
+// if (isNaN(precioProducto) || precioProducto <= 0){
+//     console.error("Error, Ingrese un Precio correcto")
+// }
+
+// let stockProducto = parseInt(prompt("Ingrese el Stock Inicial"))
+// if (isNaN(stockProducto) || stockProducto <= 0){
+//     console.error("Error, Ingrese un Stock correcto")
+// }
+
+// const producto1 = new Producto(nombreProducto, precioProducto, stockProducto);
+
+// // console.log(producto1);
+
+// producto1.mostrarInformacion();
+
+// let cantidadAVender = parseInt(prompt("Ingrese la cantidad de " 
+//                         + producto1.nombre + " que desea Vender"));
+
+// producto1.vender(cantidadAVender);
+
+// producto1.mostrarInformacion();
+
+/**
+ * ### Problema 6: Sistema de Gestión de Inventario (Problema Principal)
+**Nivel de dificultad: Avanzado**
+
+**Descripción:**
+    Crea un programa que gestione un inventario completo de productos usando una 
+    estructura de lista enlazada simple. El programa debe permitir agregar productos, 
+    vender productos y mostrar la información del inventario.
+
+**Objetivos:**
+- Creación de clases y objetos.
+- Uso de listas enlazadas para gestionar múltiples objetos.
+- Implementación de métodos para manipular el inventario.
  */
