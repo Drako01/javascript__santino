@@ -462,16 +462,42 @@ Crea un programa que simule una agenda de contactos básica.
 // producto1.mostrarInformacion();
 
 /**
- * ### Problema 6: Sistema de Gestión de Inventario (Problema Principal)
-**Nivel de dificultad: Avanzado**
+ * ### Problema 6: Perfil de Usuario
+    Descripción: Crea un programa que gestione un perfil de usuario. 
+    El programa debe permitir al usuario ingresar su nombre, edad y 
+    correo electrónico, y luego mostrar esta información en la consola.
 
-**Descripción:**
-    Crea un programa que gestione un inventario completo de productos usando una 
-    estructura de lista enlazada simple. El programa debe permitir agregar productos, 
-    vender productos y mostrar la información del inventario.
+    Objetivos:
 
-**Objetivos:**
-- Creación de clases y objetos.
-- Uso de listas enlazadas para gestionar múltiples objetos.
-- Implementación de métodos para manipular el inventario.
+    Introducción al uso de objetos en JavaScript.
+    Uso de funciones para establecer y mostrar las propiedades de un objeto.
+ * 
  */
+
+class Usuario{
+    constructor(nombre, edad, email){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.email = email
+    }
+    mostrarPerfilDeUsuario(){
+        console.log(
+                        "Perfil del Usuario:\n" + 
+                        "-------------------\n" + 
+                        "Nombre: " + this.nombre + "\n" +
+                        "Edad: " + this.edad + "\n" +
+                        "Correo Electrónico: " + this.email
+                    )
+    }
+}
+
+let nombreUsuario = prompt("Ingrese el Nombre del Usuario");
+let edadUsuario = parseInt(prompt("Ingrese la Edad del Usuario"));
+if (isNaN(edadUsuario) || edadUsuario <= 0){
+    console.error("Error, Ingrese una Edad correcta")
+}
+let emailUsuario = prompt("Ingrese el Email del Usuario");
+
+const usuario1 = new Usuario(nombreUsuario, edadUsuario, emailUsuario);
+
+usuario1.mostrarPerfilDeUsuario();
